@@ -77,4 +77,16 @@ Read [methodology](docs/METHODOLOGY.md), [decision logic](docs/DECISION_LOGIC.md
 
 The forecast benchmark is not claimed to be beaten. Holiday sample support is limited; uncertainty envelopes are stress ranges rather than confidence intervals. Optimality applies to the finite aggregate model, not a named individual roster or guaranteed service. Closed blocks are excluded from attainment averages. Workload units are never pooled across departments. The Last Worker can honestly recommend no move.
 
-Prompts **1 and 2** are implemented. See [independent audit](artifacts/INDEPENDENT_AUDIT.md) and [verified presentation claims](artifacts/verified_presentation_claims.csv). Prompt 3 remains unexecuted.
+Prompts **1 and 2** are implemented. See [independent audit](artifacts/INDEPENDENT_AUDIT.md) and [verified presentation claims](artifacts/verified_presentation_claims.csv). Prompt 3 polish and local acceptance are complete; no deployment has been performed.
+
+## Presentation-ready local demo (Prompt 3)
+
+After `./scripts/install.sh`, run `./scripts/demo.sh`. It starts the production app on port 8000, checks readiness, and computes the four distinct guide selections into the process-local cache. Use `PORT=8001 ./scripts/demo.sh` if port 8000 is already in use. Stop the launcher with Ctrl+C. To check an already running app, use `./scripts/smoke.sh` (set PORT if needed). To run without warming, `./scripts/start.sh` remains available.
+
+Click **Start guided demo** for five large-format, resettable scenes: BASE → PEAK → DISRUPT → Last Worker → Decide & Export. The Last Worker step uses the audited Balanced example and shows the rejected transfer's lender loss alongside the recommended addition. Exit presentation restores the full interactive workspace. Solver errors hide stale recommendations and show clearly labeled official week reference totals.
+
+The timed click-by-click script is [artifacts/demo_run_of_show.md](artifacts/demo_run_of_show.md), with 3-minute and 4-minute versions and an optional 5-minute discussion. [artifacts/DEMO_ASSETS](artifacts/DEMO_ASSETS) contains seven real application screenshots, PNG/SVG charts, a FORGE diagram and JSON live evidence. Recreate them against a running local app with `MPLCONFIGDIR=/tmp/shiftwise-mpl python scripts/presentation_assets.py` using the optional Playwright dependency and Chromium.
+
+**Offline after installation:** runtime has no external model, font, data or cloud-service dependency. Automated Python tests forbid network connections during complete model generation. Browser rehearsal blocks every external hostname while the local API, five scenes and CSV download remain functional. Installation still needs package registries; the live demo still needs the local server running. Backup screenshots are captured results, never a substitute passed off as a live calculation.
+
+Deployment has **not** been performed. Before external deployment, decide authentication/authorization, HTTPS and access routing, concurrency and persistence requirements, monitoring, and production-data calibration. The independent audit's conditional model limitations remain in force.

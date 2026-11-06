@@ -147,7 +147,7 @@ with sync_playwright() as pw:
     checks.append("Official DISRUPT Last Worker decision captured from the running UI")
     page.get_by_role("button", name="Start guided demo", exact=True).click()
     page.locator('.result[aria-busy="false"]').wait_for()
-    assert page.get_by_text("Scene 1 / 4", exact=False).is_visible()
+    assert page.get_by_text("Scene 1 / 5", exact=False).is_visible()
     checks.append("Guided tour invokes real scenario selection")
     page.set_viewport_size({"width": 430, "height": 900})
     page.screenshot(path=str(screens / "06-mobile.png"), full_page=True)

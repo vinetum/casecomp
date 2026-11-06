@@ -3,13 +3,14 @@
 import json
 from playwright.sync_api import sync_playwright
 from pathlib import Path
+import os
 
 with sync_playwright() as p:
     b = p.chromium.launch(
         executable_path="/usr/bin/chromium", headless=True, args=["--no-sandbox"]
     )
     page = b.new_page()
-    page.goto("http://127.0.0.1:8001")
+    page.goto("http://127.0.0.1:" + os.environ.get("PORT", "8000") + "")
     page.locator('.result[aria-busy="false"]').wait_for(timeout=90000)
     page.route(
         "**/api/decision",

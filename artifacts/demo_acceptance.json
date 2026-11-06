@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "Five real solver scenes, Balanced marginal example, lender loss, reset and validated export",
+    "Responsive projector guide has no mobile page overflow",
+    "Injected solver timeout shows labeled official reference, hides stale plan, and retries successfully",
+    "All browser Internet destinations blocked; local API, assets and export still work"
+  ],
+  "browser_errors": [],
+  "external_requests": [],
+  "preflight_seconds": 0.008480408001560136
+}

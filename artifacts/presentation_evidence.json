@@ -76,5 +76,25 @@
     "shift_code": "MID",
     "dept_id": 38
   },
+  "source_files": [
+    "v_ShiftHistory.csv",
+    "v_PlanningWeekGrid.csv",
+    "comp_LaborStandard.csv",
+    "comp_LaborCostAssumption.csv",
+    "TEAM_SUBMISSION_TEMPLATE.csv"
+  ],
+  "scope": "All case data is simulated. Scenario costs are alternatives, not additive realized spending. Service probabilities are model estimates, not causal or guaranteed waits.",
+  "limitations": [
+    "Short six-week history; two forecast selection origins",
+    "Neutral central holiday adjustments; no validated holiday uplift",
+    "Sensitivity envelopes are not confidence intervals",
+    "Aggregate pools do not establish individual weekly hours or a named roster",
+    "Low-probability plateaus have unvalidated marginal capacity value"
+  ],
+  "audit": "artifacts/INDEPENDENT_AUDIT.md",
+  "demo_assets": "artifacts/DEMO_ASSETS",
+  "demo_run_of_show": "artifacts/demo_run_of_show.md",
+  "live_demo_evidence": "artifacts/DEMO_ASSETS/live_demo_decisions.json",
+  "verified_claims": "artifacts/verified_presentation_claims.csv",
   "prior_claim_note": "Preliminary research values were not used as labels or forced outputs. No billion-simulation claim."
 }

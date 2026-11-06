@@ -7,10 +7,16 @@
 - [x] Build React/TypeScript dashboard with live recalculation and validated export.
 - [x] Generate artifacts, methodology, decision logic, demo and judge Q&A.
 - [x] Run backend tests, browser functional tests, production build and 567-row audit.
-- [x] Commit task branch. Prompt 2 is now audited separately; Prompt 3 remains unexecuted.
+- [x] Commit task branch. Prompt 2 is now audited separately; Prompt 3 is now complete locally; deployment is not part of this stage.
 
 ## Prompt 2 independent audit
 - [x] Exhaustive source-based allocation/cost oracle and adversarial tests.
 - [x] Correct dominated-spending objective and service/calibration/error-handling defects.
 - [x] Revalidate forecasts, all official marginal decisions, browser CSV and runtime.
 - [x] Full tests and build; audit report and verified presentation claims.
+
+## Prompt 3 demo polish
+- [x] Five live projector scenes, reset, source-backed Last Worker comparison and capacity rails.
+- [x] Distinct labeled error reference, local cache warmup, offline runtime checks.
+- [x] Actual screenshots, vector/raster charts, live JSON and generated timed run of show.
+- [x] Full test/build/export gates; original source inputs and audited staffing preserved.

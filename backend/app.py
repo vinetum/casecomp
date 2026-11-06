@@ -63,6 +63,25 @@ def decision(selection: Selection):
         raise HTTPException(503, str(e)) from e
 
 
+@app.post("/api/demo/preflight")
+def demo_preflight():
+    """Warm the existing decision cache using official inputs, never saved answers."""
+    engine = get_engine()
+    selections = [
+        (1, 2, "2026-02-14", "MID", "Service First"),
+        (2, 2, "2026-02-14", "MID", "Service First"),
+        (3, 2, "2026-02-14", "MID", "Service First"),
+        (3, 2, "2026-02-13", "OPEN", "Balanced"),
+    ]
+    return native(
+        {
+            "ready": True,
+            "scenes": [engine.decision(*s) for s in selections],
+            "note": "Calculated locally from bundled official inputs; cached only for this running process. No external services or saved answers.",
+        }
+    )
+
+
 @app.get("/api/export")
 def export(
     team_id: str = Query(
