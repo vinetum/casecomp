@@ -21,13 +21,14 @@ def test_no_absolute_local_api_in_frontend_and_explicit_production_contract():
     for value in [
         "runtime: docker",
         "healthCheckPath: /healthz",
-        "numInstances: 1",
+        "plan: free",
         "branch: work",
         "sync: false",
         "generateValue: true",
     ]:
         assert value in blueprint
     assert "value: local" not in blueprint
+    assert "plan: standard" not in blueprint and "numInstances" not in blueprint
 
 
 def test_mac_shell_wrappers_parse_and_do_not_disable_tls():

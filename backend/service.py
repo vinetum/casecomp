@@ -33,7 +33,7 @@ def metrics(y, p):
 
 
 class Service:
-    def __init__(self):
+    def __init__(self, diagnostics=True):
         h = read("v_ShiftHistory")
         self.standards = (
             read("comp_LaborStandard")
@@ -118,7 +118,8 @@ class Service:
                 "coefficient": float(final.coef_[0, 0]) if kind == "logistic" else None,
                 "note": "Selection ends Jan 28; held-out Jan 29–Feb 11. Final model refit through Feb 11. No warehouse effects; limited support.",
             }
-        self.chart()
+        if diagnostics:
+            self.chart()
 
     def probability(self, dept, demand, n, hours):
         n = np.asarray(n, dtype=float)

@@ -56,17 +56,27 @@ def calendar_factor(train, row):
 
 def predict(train, rows, method):
     result = []
+    groups = {key: frame for key, frame in train.groupby(["store_id", "dept_id"])}
+    fitted = {}  # Per-call, per-training-origin reuse; never shared across folds.
     for r in rows.itertuples():
-        local = train[(train.store_id == r.store_id) & (train.dept_id == r.dept_id)]
+        local = groups[(r.store_id, r.dept_id)]
         if method == "ridge":
-            enc = ColumnTransformer(
-                [
-                    ("weekday", OneHotEncoder(handle_unknown="ignore"), ["weekday"]),
-                    ("numeric", StandardScaler(), FEATURES[1:]),
-                ]
-            )
-            model = make_pipeline(enc, Ridge(alpha=10, solver="lsqr"))
-            model.fit(local[FEATURES], np.log(local.daily_demand_units))
+            key = (r.store_id, r.dept_id)
+            if key not in fitted:
+                enc = ColumnTransformer(
+                    [
+                        (
+                            "weekday",
+                            OneHotEncoder(handle_unknown="ignore"),
+                            ["weekday"],
+                        ),
+                        ("numeric", StandardScaler(), FEATURES[1:]),
+                    ]
+                )
+                model = make_pipeline(enc, Ridge(alpha=10, solver="lsqr"))
+                model.fit(local[FEATURES], np.log(local.daily_demand_units))
+                fitted[key] = model
+            model = fitted[key]
             value = float(
                 np.exp(model.predict(pd.DataFrame([r._asdict()])[FEATURES])[0])
             )

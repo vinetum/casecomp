@@ -20,10 +20,10 @@ def records(d):
 
 
 class Engine:
-    def __init__(self):
+    def __init__(self, diagnostics=True):
         self.audit = audit()
         self.forecast = Forecast()
-        self.service = Service()
+        self.service = Service(diagnostics=diagnostics)
         self.grid = self.forecast.planning
         self.metrics = {
             "forecast": self.forecast.metrics,
@@ -33,7 +33,7 @@ class Engine:
         self.plans = {}
         self.generate()
 
-    @lru_cache(maxsize=256)
+    @lru_cache(maxsize=64)
     def decision(
         self,
         scenario_id,

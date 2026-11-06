@@ -2,7 +2,7 @@
 
 ## At least one day before
 
-- [ ] Review Render's cost and authorize deployment only from branch work with the prepared Dockerfile and production mode.
+- [ ] Confirm Render shows **Free / $0**, branch work and production mode. Do not authorize paid services, add-ons or upgrades. Review the qualified results in FREE_TIER_READINESS.md; optionally run Test Render Free.command on Docker Desktop first.
 - [ ] Record the **actual HTTPS URL displayed by Render**, not a guessed service address. Confirm Live status and correct deployed commit.
 - [ ] Keep the demo password in a password manager; give it privately to the presenter/authorized judges. Do not put it on slides, a public QR code, in GitHub or in screenshots.
 - [ ] In a private window, verify the login gate, all five guide scenes, live recalculation, CSV download and Lock demo. Verify raw source-file paths do not download.
@@ -14,7 +14,7 @@
 ## Before your presentation slot
 
 - [ ] Plug the Mac in, connect the display and test readability/zoom. Silence notifications and prevent sleep.
-- [ ] Open the actual Render HTTPS site, sign in privately and load/rehearse the guide. Do not deploy a new commit now.
+- [ ] Open the actual Render HTTPS site **well before your slot**. Allow several minutes for a sleeping Free service to wake and rebuild its real models, then sign in privately and rehearse the guide. Check free quotas; do not deploy a new commit now or add an artificial keep-alive service.
 - [ ] Start the offline backup as well. Keep the local tab distinguishable from the hosted tab.
 - [ ] Click Reset to begin BASE with official assumptions. The Last Worker guide selects Balanced intentionally; the export stays official Service First.
 - [ ] Have the timed script and clearly labeled backup screenshots ready. Assign a teammate to switch tabs if Wi-Fi fails.
@@ -31,4 +31,4 @@
 
 - [ ] Lock the hosted demo and stop the local backup.
 - [ ] Rotate the shared password/signing secret if access should end immediately.
-- [ ] In Render, suspend or delete the paid service when no longer needed; confirm the billing effect in Render's dashboard. Deleting the code locally does not stop a paid service.
+- [ ] In Render, suspend/delete the Free demo when access is no longer needed. If an older paid service exists, separately downgrade/delete it and verify Billing; changing render.yaml alone does not stop its charges.

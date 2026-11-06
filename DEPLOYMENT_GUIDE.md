@@ -1,68 +1,66 @@
-# Publish the protected SHIFTWISE demo on Render
+# SHIFTWISE on Render Free — $0 hosting only
 
-**Current status:** the deployment image is prepared and tested locally. No Render website has been created or verified. There is no public app URL to share yet. Your Render account, GitHub authorization and approval of the selected paid plan are required; no Render credentials were available to this task.
+**Do not choose Standard, Starter, a paid workspace, a disk, database, worker, or paid add-on.** This branch now declares `plan: free`. No Render deployment or paid resource was created by this task. The app remains the complete audited React/Python application with login, live forecasting/optimization, all scenarios, Last Worker, feasibility, frontier and 567-row export.
 
-## What you will deploy
+**Qualification:** see `FREE_TIER_READINESS.md` and its measurements. This coding environment's rootless Docker does not enforce cgroups. It cannot certify a strict whole-container 512 MiB limit; the local application probe is explicitly different. Do not substitute requested Docker flags for a measured limit. A one-click strict Docker Desktop test is provided below. There is no public URL until you explicitly deploy and verify one.
 
-One Docker web service serves both the React dashboard and Python API. No separate frontend, database, DNS setup or API-address editing is needed. Requests use relative `/api/...` paths on the same HTTPS origin. `render.yaml` selects **one Standard instance in Oregon**, with automatic deploys off. It is a paid tier chosen to avoid free-service sleep and allow startup/model memory headroom. Check Render's **current price** before approving creation; this guide does not quote a price or authorize billing on your behalf.
+## If you previously created a paid Render service
 
-All model inputs stay inside the container. Only `frontend/dist` is served as static files. The dashboard, data API, assets and required CSV download require the shared demo login. Original raw CSVs, workbook, PDF, source code, audit artifacts and OpenAPI are not public file routes. Keep your GitHub repository private if competition materials must not be shared publicly; a login on the website does not make a public GitHub repository private. Ask the organizers about distribution if their rules are unclear. The supplied case is simulated, not actual Costco information.
+Changing `render.yaml` in GitHub does **not** stop an already-running paid service or its charges. Sign in to Render, open that service → **Settings / Instance Type**, select **Free** if supported, and save; otherwise suspend/delete the paid service when you no longer need it. Check **Billing** for all other paid resources. This task cannot inspect or change your Render account. Do not leave Standard running because the repository now says Free.
 
-## Before opening Render
+## Understand Free before presentation day
 
-1. Sign in to GitHub and open **vinetum/casecomp**. Above the file list, click the branch selector (usually **main**) and choose **work**. Confirm `Dockerfile`, `render.yaml` and this guide appear. The tested work branch has been pushed to the existing GitHub repository. If work is not visible, the changes are still local: use GitHub Desktop to select this repository and branch work, then click **Publish branch** or **Push origin**. Do not deploy main if it only contains the original input files.
-2. Do not upload a `.env`, credentials, or signing key to GitHub. The repository already ignores local secret files.
-3. Open a password manager and generate a **unique random password of 24 or more characters** (maximum 256) for the demo. You will paste it into Render, not into code or chat. Share it privately only with your team and authorized judges.
+- Render Free web services sleep after inactivity (normally around 15 minutes). Cold wakeups must load Python, audit the original inputs, train the models and rebuild the real staffing plans. Expect a loading/waking screen and allow several minutes. The completed CPU-paced probe took **212 seconds** to cold-start and another **14 seconds** to prepare the guide; restarts took **211–228 seconds**. Its recorded process-memory bound was **242.14 MiB**, excluding aggregate container charges. These are local probe measurements, not a Render uptime or strict-memory promise.
+- Free CPU is shared; the acceptance target is **0.1 CPU and 512 MiB RAM with no swap**. Shared-host performance can vary. A cold service is not suitable for a surprise first click in front of judges.
+- Free workspace instance hours, bandwidth and build-minute allowances are shared and subject to Render's current terms. Check your dashboard's included quotas. Do not add paid overages, payment-backed auto-upgrades, extra services or custom domains to work around a quota. If the account cannot offer a $0 Free service, stop and use the installed Mac backup.
+- No persistent disk or external database is needed. Models and outputs are rebuilt from bundled inputs after process loss. A restart can discard caches; it does not discard the source data or fabricate new results.
+- Do not add an artificial keep-alive/ping service to defeat the provider's sleep policy. Manually open and rehearse before your slot; keep the real Mac backup running.
 
-## Create the Render Blueprint
+## Optional: verify a real strict resource cap on your Mac first
 
-Render can change its wording; the intended resources/settings are listed explicitly below so you can verify them before approving.
+The source has `Test Render Free.command`. It builds and tests locally; it does **not** create a website or a paid service.
 
-1. Open **https://dashboard.render.com/** and sign in or create your account. Complete Render's email verification and billing setup if prompted.
-2. Click **New +** → **Blueprint**. A Blueprint reads the repository's `render.yaml` and creates the web service from those settings.
-3. If GitHub is not connected, click the GitHub connection option and **Authorize Render** / **Install Render**. In GitHub's authorization screen choose **Only select repositories**, then select **vinetum/casecomp**. Approve access to that repository. Return to Render. This authorization is an account action the coding environment cannot perform for you.
-4. Find **casecomp** in the repository list and click **Connect**. Select branch **work**. Keep the Blueprint path **render.yaml** at the repository root. If Render offers a Blueprint name, use a recognizable name such as SHIFTWISE Competition; the resource's configured service name is `shiftwise-demo`.
-5. Review the proposed service. Confirm **Docker**, **Standard**, **1 instance**, **Oregon**, health path **/healthz**, and **automatic deploys off**. Do not select a separate static site or Python build command. Docker builds the frontend and installs Python dependencies for you.
-6. For the required secret **SHIFTWISE_DEMO_PASSWORD**, paste the password from your password manager. Do not use an example password, your GitHub password or your Render account password.
-7. **SHIFTWISE_SESSION_SECRET** is generated by Render from `generateValue: true`. Keep that generated value; it is a signing secret, not the password judges type. `SHIFTWISE_ENV` must remain **production**. Render supplies the service's external hostname and PORT automatically; do not set localhost as a production hostname.
-8. Review the current recurring cost. When you are ready to authorize it, click **Deploy Blueprint** / **Apply** on Render's confirmation screen. This is the action that actually creates and deploys the paid service.
-9. Open the new web service and its **Events** / **Logs**. Wait for a successful build and a **Live** status. The Docker build can take several minutes. Startup audits inputs, trains models and solves official scenarios before health becomes ready; the tested clean container took about 23 seconds on one CPU, but cloud timings vary. Do not interrupt an otherwise healthy initial build simply because model startup is not instantaneous.
-10. Click the **HTTPS address Render displays on your service page**. That exact address is your website URL. No guessed URL in this repository is a deployment result. Save the displayed URL privately with the demo password.
+1. Complete the normal Mac backup installation (`LOCAL_BACKUP_GUIDE.md`). Your reported MacBook Air / Tahoe 26.6.2 is above the documented minimum.
+2. Install and open Docker Desktop using its Personal/education free entitlement, if applicable to you; do not buy a subscription or start a cloud build service. Let its local engine become ready.
+3. Double-click **Test Render Free.command** while online for its first dependency/image build. It installs the optional test browser, builds the actual image and runs the full protected guide under **512 MiB, no swap, 0.1 CPU**, with two restarts. Allow up to 15 minutes per startup on very slow hardware.
+4. Open `artifacts/render_free_cgroup_check.json`. Only `strict_container_test_passed: true` confirms the kernel-enforced test passed. The script aborts if the actual `memory.max`, `memory.swap.max` and `cpu.max` do not match. It records peak charged container memory, cold/restart timing, guide latency, authentication and exact CSV verification. It removes its test container afterward.
+5. If it fails, keep the error/report and use the Mac backup. Do not hide the failure by increasing memory, CPU, solver tolerance, or dropping a feature.
 
-If the Blueprint screen does not allow selecting work, first publish work to GitHub. Do not manually create a fake URL or change the guide to claim deployment succeeded.
+Docker Desktop is optional for the **native Mac backup** itself, which needs only the existing Python/Node installation. Native Mac and container tests are separate.
 
-## Verify before sharing the address
+## Create a Free Blueprint only when you choose to deploy
 
-1. Open the Render address in a private/incognito window. Confirm it uses **https**, the browser accepts the certificate, and you see **Competition demo access**, not the dashboard. Entering the correct demo password should open SHIFTWISE.
-2. In that same private window before signing in, try adding `/api/bootstrap` to the Render address. It must return a sign-in-required response without case data. Add `/data/raw/v_ShiftHistory.csv`; it must not download a dataset. After signing in, the raw path should still be unavailable (404).
-3. Sign in, wait for the dashboard, then click **Start guided demo**. Run all five steps: BASE, PEAK, DISRUPT, Last Worker, Decide & Export. The original audited example intentionally shows unresolved service risk in DISRUPT; this is not a deployment failure.
-4. Exit presentation. Open **Scenario Lab**, change demand or available workforce and click **Recalculate**. Confirm the result changes or honestly reports a staffing conflict. The engine allows one expensive calculation at a time; a busy message means wait briefly and retry, not refresh continuously.
-5. In **Decision & Export**, download the staffing plan. It must have 567 data rows plus one header row. The untouched SHIFTWISE-team export's SHA-256 is `910ee279b0f25a720623051b54aebbc4b1148d8b0c0caffa1e6cbc01823bebe6`. A different team ID changes the file hash, but not the recommendations.
-6. Click **Lock demo**. Opening `/api/bootstrap` again must require signing in. Share the URL and password separately and privately.
-7. Check Render's logs for errors during the rehearsal. Once you have observed these hosted checks, record the real URL and date in your own competition notes. Local acceptance alone does not prove the public site's certificate, routing or account settings.
+1. On GitHub, open **vinetum/casecomp**, choose branch **work**, and confirm `render.yaml` says **plan: free**. Do not deploy an older commit with Standard. The task pushes the final branch but does not apply it to Render.
+2. Sign in at **https://dashboard.render.com/**. Click **New + → Blueprint**.
+3. Connect/authorize GitHub if asked. In GitHub, authorize **only the selected repository casecomp**, then return to Render and click **Connect** beside it. Account authorization must be done by you; no Render credentials are available in this coding environment.
+4. Select branch **work**, Blueprint path **render.yaml**, and a recognizable Blueprint name. Review the proposed Docker web service.
+5. Confirm the instance type explicitly shows **Free / $0**. There must be no paid extra resource, minimum scaling or persistent disk. The Free plan cannot autoscale; `numInstances` is intentionally omitted. Automatic deployment stays **off**. Confirm the final pushed Free-plan commit, not an older Standard-plan revision.
+6. Enter **SHIFTWISE_DEMO_PASSWORD** using a password-manager-generated random password of 24+ characters (maximum 256). Share it only with your team/authorized judges. **SHIFTWISE_SESSION_SECRET** is generated securely by the Blueprint. Keep **SHIFTWISE_ENV=production**. Do not commit or paste these values in chat, source, URLs, build arguments or screenshots. Render supplies the real external hostname and listening PORT.
+7. If Render shows a monthly charge or asks you to upgrade to make this service work, stop; your budget is $0. Do not approve a paid fallback.
+8. When you are satisfied it is Free, click **Deploy Blueprint / Apply**. That is your actual deployment action; this task does not do it. Watch **Events / Logs** until **Live**. The health path `/healthz` becomes ready only after genuine startup validation and model generation.
+9. Click the **actual HTTPS URL displayed by Render**. Save that URL; do not guess a service hostname. The first anonymous page must be **Competition demo access**. Before signing in, `/api/bootstrap` must deny access without data. Raw paths such as `/data/raw/v_ShiftHistory.csv` must not download source files even after signing in.
+10. Sign in and run **Start guided demo → BASE → PEAK → DISRUPT → LAST WORKER → DECIDE & EXPORT**. Exit the guide, change both demand and workforce availability, and click Recalculate. Inspect the certificate/frontier and download the 567-row official CSV. Click Lock demo and confirm data APIs require login again.
+11. Let the service sleep naturally, reopen it, wait for real startup, and repeat the guide/export check. This is the provider-specific wakeup test that local Docker restarts cannot replace. Keep the session password/signing values stable; signed tickets survive ordinary process restarts until expiry.
 
-## Updating the deployed service
+## Zero-cost competition procedure
 
-Automatic deployment is disabled for demo stability. After new code is committed and pushed to work, open the service and click **Manual Deploy** → **Deploy latest commit**. Rehearse and revalidate after the deploy becomes Live. Do not deploy immediately before presenting. To revoke all existing sessions, change either secret under the service's **Environment** settings, save and redeploy. Changing the password alone also invalidates old sessions. Do not expose secret values in screenshots.
+Open the actual site well before your slot, wait until it is ready, sign in and rehearse the guide. Start the **native Mac backup** as well. Reset to BASE before presenting. If the hosted service is asleep, unavailable, quota-limited or too slow, switch to the actual local app rather than changing plans or paying. Read `artifacts/demo_run_of_show.md` for the timed script and honest limitations. A captured screenshot must be called a captured result, not a fresh calculation.
 
-For a custom domain, first add it in Render's **Settings → Custom Domains** and follow Render's DNS/TLS verification. Then set `SHIFTWISE_ALLOWED_HOSTS` to the exact Render hostname and custom hostname, comma-separated, without `https://`, ports or wildcards. Test HTTPS and login on the chosen hostname. Custom domains are optional; Render's supplied HTTPS address is simpler.
+## Protections preserved
 
-## Common problems, without editing code
+One worker, one expensive calculation at a time, four bounded application worker threads, signed eight-hour Secure/HttpOnly/SameSite=Strict sessions, exact host/Origin checks, no cross-origin API allowance, CSP/frame protection, no-store/no-index responses, body/time limits and request quotas remain. Shared-password access is a competition gate, not enterprise identity or DRM. The public readiness endpoint exposes no case data. Only compiled frontend files are static-served. Keep the GitHub repository private if case-distribution rules require it.
 
-| Symptom | What to check |
+The allocator/cache changes are performance controls, not looser staffing constraints: one training fit is reused only within the same fold/group; globally impossible lookup rows are pruned exactly; the web skips only offline PNG rendering while its live calibration chart remains. CLI exports still generate the complete diagnostic artifacts. The audited submission hash is unchanged.
+
+## Troubleshooting without spending
+
+| Issue | Action |
 |---|---|
-| Production startup refuses missing settings | Under Environment, confirm password is 16–256 characters and session secret is 32+ characters. Keep production mode. Render normally supplies RENDER_EXTERNAL_HOSTNAME; for another host explicitly set SHIFTWISE_ALLOWED_HOSTS. Never bypass the error by changing mode to local. |
-| Repository/branch missing | Check GitHub authorization covers casecomp and work has been pushed. Click the Git provider connection settings in Render to grant that repository. |
-| Unrecognized host / login 400 | Check exact allowed hostnames. Do not include a URL scheme or path. If using a custom domain, add both hostnames explicitly. |
-| 403 on a production script POST | Browser requests must originate from the same HTTPS site. Do not configure a separate frontend origin. Non-browser API clients must send the correct Origin and a valid signed session cookie; do not weaken CORS. |
-| Login rejects a password | Confirm the password, not the session signing secret, was entered. After five attempts from an IP, wait at least one minute. |
-| 429 / 503 | Wait and retry. Rate and capacity limits protect the single optimizer. Frequent 503s under normal rehearsal require investigation; do not disable limits or increase workers without redesigning concurrency. |
-| CSV or page appears in a search engine | Check the request is truly unauthenticated, that production mode is set, and that no source files were separately hosted. No-index headers supplement authentication; they do not replace it. |
-| App sleeps or is slow at first opening | Verify the selected paid plan rather than a free sleeping service. Rehearse/warm it before the event. |
-| Wrong or older UI | Confirm branch work and deployed commit in Events. Use a private window; perform a manual deploy if needed. |
+| Waking/loading screen | Wait for cold startup, then refresh/retry. Do not repeatedly hammer Recalculate. Keep the Mac ready. |
+| 429 / busy 503 | Wait and retry; protections remain enabled. Repeated normal-use failures need investigation, not a paid upgrade or weakened constraints. |
+| Memory restart / OOM | Keep the logs and measured resource report. Switch to the native Mac; a desktop strict test or actual Render metrics is needed before claiming reliability. |
+| Missing secrets/hostname | Correct secure Environment settings; never bypass by setting production mode to local. |
+| Quota exhausted / card or charge requested | Do not approve charges. Use the installed Mac until free allowance renews, or use the genuinely free self-hosted alternative described in `FREE_TIER_READINESS.md`. |
+| Older paid configuration appears | Stop. Check branch work and the deployed commit, then review the Free Blueprint. Source changes alone do not downgrade a running paid service. |
 
-## Security boundaries and limitations
-
-See [deployment/ENVIRONMENT.md](deployment/ENVIRONMENT.md) for every setting and fixed resource limit. Render terminates public TLS; the internal entrypoint trusts forwarded headers only because it is intended to sit behind Render's ingress. Do not expose its raw internal HTTP port directly to the Internet. One shared demo password is a competition gate, not individual accounts or MFA. Authorized viewers can still copy data they see. Rate limits and sessions are single-instance; do not add instances without a shared limiter/capacity design. The public health endpoint returns readiness only. Runtime files are ephemeral and recreated from immutable sources; no persistent disk is needed.
-
-There was no public Render deployment or public-certificate verification during this task. The actual Docker image was tested locally non-root, read-only, with CPU/memory/PID caps, real HTTPS, browser login, all demo scenes, recalculation, source-route denial and exact CSV export. That is deployment preparation evidence, not proof of a live public site.
+No public Render service or public-certificate success was verified by this task. The exact current evidence, testing limitation and free alternative are recorded in `FREE_TIER_READINESS.md`.

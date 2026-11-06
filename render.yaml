@@ -2,10 +2,9 @@ services:
   - type: web
     name: shiftwise-demo
     runtime: docker
-    plan: standard
+    plan: free
     branch: work
     region: oregon
-    numInstances: 1
     dockerfilePath: ./Dockerfile
     dockerContext: .
     healthCheckPath: /healthz
@@ -23,3 +22,5 @@ services:
         value: "1"
       - key: OPENBLAS_NUM_THREADS
         value: "1"
+      - key: MALLOC_ARENA_MAX
+        value: "2"

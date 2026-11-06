@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "strict_container_test_passed": false,
+  "verdict": "Functional application-probe pass only; strict container limits unverified",
+  "startup_seconds": 211.9182795020006,
+  "first_guide_warm_seconds": 13.614206293999814,
+  "warm_scene_seconds": [
+    1.3783841889999167,
+    4.381453769001382,
+    2.4010027889999037,
+    0.1437309949997143
+  ],
+  "memory_limit": "512m",
+  "memory_swap_limit": "512m",
+  "cpus": "0.1",
+  "peak_memory_bytes": 253906944,
+  "peak_memory_mib": 242.14453125,
+  "resource_limits_verified": false,
+  "kernel_memory_max": "34359738368",
+  "kernel_cpu_max": "400000 100000",
+  "software_probe": {
+    "application_address_space_limit_bytes": 805306368,
+    "supervisor_address_space_limit_bytes": 50331648,
+    "sampled_peak_rss_bytes": 251518976,
+    "application_peak_rss_bytes": 234782720,
+    "supervisor_peak_rss_bytes": 17383424,
+    "conservative_sum_peak_rss_bytes": 252166144,
+    "application_cpu_seconds": 23.37,
+    "total_cpu_seconds": 26.770000000000003,
+    "wall_seconds": 267.8791774450001,
+    "cpu_fraction": 0.09993311258952299,
+    "target_cpu_fraction": 0.1,
+    "container_cgroups_enforced": false,
+    "measurement": "/proc VmHWM + sampled RSS; hard per-process RLIMIT_AS. File cache is excluded."
+  },
+  "memory_measurement": "768 MiB virtual-address guard and monitored 512 MiB RSS ceiling; VmHWM high-water measurement; NOT a cgroup/file-cache limit",
+  "stage_memory": {
+    "startup_peak_bytes": 251297792,
+    "preflight_and_api_peak_bytes": 253906944,
+    "complete_demo_peak_bytes": 252166144
+  },
+  "restart_runs": [
+    {
+      "ready_seconds": 210.96286705600141,
+      "guide_warm_seconds": 12.532578566000666,
+      "peak_bytes": 251863040,
+      "cookie_recovered": true,
+      "csv_unchanged": true
+    },
+    {
+      "ready_seconds": 228.06650845399963,
+      "guide_warm_seconds": 15.546458852000796,
+      "peak_bytes": 252157952,
+      "cookie_recovered": true,
+      "csv_unchanged": true
+    }
+  ],
+  "oom_killed": false,
+  "checks": [
+    "Production image exits on missing required secrets/hostname before serving requests",
+    "Clean Docker startup as uid 10001 with read-only source/image; actual resource enforcement is separately recorded",
+    "CA-verified local HTTPS: session cookie, CSRF, hostname, payload limits and raw-source/OpenAPI denial",
+    "Four official live scenario/marginal decisions, solver feasibility, and byte-identical audited HTTP CSV",
+    "Production Chromium login, five guided scenes, real demand/availability recalculation, timeout/retry, CSV download and logout; no page exceptions"
+  ],
+  "public_site_live": false,
+  "image": "shiftwise-demo:prepared",
+  "public_tls_verified": false,
+  "tls_test": "Ephemeral local CA verified by httpx; Chromium trusts only the generated leaf SPKI. Render public TLS is not tested until deployment.",
+  "report_adjustments": [
+    "Peak summary recomputed from all saved stage and restart high-water readings; the initial preflight was higher than the final process. No measurement was replaced or inferred."
+  ]
+}

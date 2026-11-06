@@ -1,0 +1,1 @@
+STRICT RESOURCE TEST BLOCKED: this daemon has no cgroup driver. Docker --memory/--cpus are not enforced. Use cgroup-enabled Docker or explicitly select the separately labeled --software-probe test.

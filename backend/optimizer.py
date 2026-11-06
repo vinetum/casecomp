@@ -98,7 +98,12 @@ class GroupOptimizer:
         allvars = []
         costs = []
         scores = []
+        loss = round(tolerance * self.open_count * SCALE)
         for ti, table in enumerate(self.tables):
+            # Exact domain pruning: other independent components cannot exceed
+            # their own maxima, so no feasible global solution can use these rows.
+            component_max = max(c.score for c in table)
+            table = [c for c in table if c.score >= component_max - loss]
             values = []
             for c in table:
                 values.append(
@@ -114,7 +119,6 @@ class GroupOptimizer:
             allvars.append(vs)
             costs.append(vs[-2])
             scores.append(vs[-1])
-        loss = round(tolerance * self.open_count * SCALE)
         model.add(sum(scores) >= self.max_score - loss)
         model.minimize(sum(costs))
         solver = cp_model.CpSolver()

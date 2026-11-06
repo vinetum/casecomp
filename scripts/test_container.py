@@ -10,7 +10,13 @@ import httpx
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCKER = ["docker", "--host=unix:///var/run/docker.sock"]
+import sys
+
+DOCKER = (
+    ["docker"]
+    if sys.platform == "darwin"
+    else ["docker", "--host=unix:///var/run/docker.sock"]
+)
 NAME = "shiftwise-production-check"
 
 
@@ -18,7 +24,62 @@ def cmd(*args, **kw):
     return subprocess.check_output(list(args), text=True, **kw).strip()
 
 
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--cpus", default="1")
+parser.add_argument("--memory", default="1g")
+parser.add_argument("--startup-timeout", type=int, default=180)
+parser.add_argument("--restarts", type=int, default=0)
+parser.add_argument("--software-probe", action="store_true")
+parser.add_argument("--report", default="artifacts/production_acceptance.json")
+args = parser.parse_args()
+report_path = ROOT / args.report
+# A failed rerun must never leave a previous successful result looking current.
+report_path.write_text(
+    json.dumps(
+        {
+            "passed": False,
+            "strict_container_test_passed": False,
+            "status": "Test started but has not completed successfully; consult terminal output",
+            "public_site_live": False,
+        },
+        indent=2,
+    )
+)
+if (
+    not args.software_probe
+    and cmd(*DOCKER, "info", "--format", "{{.CgroupDriver}}") == "none"
+):
+    report_path.write_text(
+        json.dumps(
+            {
+                "passed": False,
+                "strict_container_test_passed": False,
+                "status": "BLOCKED: Docker cgroup driver is none; requested CPU/RAM limits are not enforced",
+                "public_site_live": False,
+            },
+            indent=2,
+        )
+    )
+    raise SystemExit(
+        "STRICT RESOURCE TEST BLOCKED: this daemon has no cgroup driver. Docker --memory/--cpus are not enforced. Use cgroup-enabled Docker or explicitly select the separately labeled --software-probe test."
+    )
 checks = []
+
+
+def probe_sample():
+    return json.loads(
+        cmd(*DOCKER, "exec", NAME, "cat", "/app/artifacts/resource_probe.json")
+    )
+
+
+def memory_sample():
+    if args.software_probe:
+        return probe_sample()["conservative_sum_peak_rss_bytes"]
+    return int(cmd(*DOCKER, "exec", NAME, "cat", "/sys/fs/cgroup/memory.peak"))
+
+
 with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
     tmp = Path(directory)
     import secrets
@@ -161,26 +222,42 @@ with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
                 "--name",
                 NAME,
                 "--read-only",
+                *(["--no-healthcheck"] if args.software_probe else []),
                 "--tmpfs",
                 "/tmp:rw,nosuid,noexec,size=128m",
                 "--tmpfs",
                 "/app/artifacts:rw,nosuid,noexec,size=32m,uid=10001,gid=10001",
                 "--cpus",
-                "1",
+                args.cpus,
                 "--memory",
-                "1g",
+                args.memory,
+                "--memory-swap",
+                args.memory,
                 "--pids-limit",
                 "128",
                 "--env-file",
                 str(env),
                 "-p",
                 "127.0.0.1:18080:10000",
+                *(
+                    ["-e", "PROBE_CPUS=" + args.cpus, "--entrypoint", "python"]
+                    if args.software_probe
+                    else []
+                ),
                 "shiftwise-demo:prepared",
+                *(["/app/deployment/resource_probe.py"] if args.software_probe else []),
             ],
             check=True,
             stdout=subprocess.DEVNULL,
         )
-        for _ in range(180):
+        for iteration in range(args.startup_timeout):
+            if iteration % 10 == 0:
+                state = json.loads(
+                    cmd(*DOCKER, "inspect", "--format", "{{json .State}}", NAME)
+                )
+                if not state["Running"]:
+                    logs = cmd(*DOCKER, "logs", "--tail", "25", NAME)
+                    raise RuntimeError("Application exited before readiness: " + logs)
             try:
                 with httpx.Client(trust_env=False) as probe:
                     if (
@@ -198,6 +275,24 @@ with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
                 "Container readiness failed; inspect the local container log"
             )
         startup = time.monotonic() - started
+        kernel_memory = cmd(*DOCKER, "exec", NAME, "cat", "/sys/fs/cgroup/memory.max")
+        kernel_swap = cmd(
+            *DOCKER, "exec", NAME, "cat", "/sys/fs/cgroup/memory.swap.max"
+        )
+        kernel_cpu = cmd(*DOCKER, "exec", NAME, "cat", "/sys/fs/cgroup/cpu.max")
+        expected_memory = 512 * 1024**2 if args.memory == "512m" else 1024**3
+        quota, period = kernel_cpu.split()
+        cgroups_verified = (
+            kernel_memory == str(expected_memory)
+            and kernel_swap == "0"
+            and quota != "max"
+            and abs(int(quota) / int(period) - float(args.cpus)) < 0.0001
+        )
+        if not args.software_probe and not cgroups_verified:
+            raise RuntimeError(
+                "Docker resource flags are NOT kernel-enforced in this environment. Use a cgroup-enabled runner for the strict test. --software-probe is explicitly a different, per-process test."
+            )
+        startup_memory = memory_sample()
         assert cmd(*DOCKER, "exec", NAME, "id", "-u") == "10001"
         subprocess.run(
             DOCKER
@@ -205,7 +300,7 @@ with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
             check=True,
         )
         checks.append(
-            "Clean Docker startup as uid 10001 with read-only source/image and bounded memory/CPU/PIDs"
+            "Clean Docker startup as uid 10001 with read-only source/image; actual resource enforcement is separately recorded"
         )
 
         class Proxy(BaseHTTPRequestHandler):
@@ -309,7 +404,9 @@ with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
                 c.get("/api/bootstrap", headers={"Host": "evil.test"}).status_code
                 == 400
             )
+            first_warm = time.monotonic()
             preflight = c.post("/api/demo/preflight", headers=origin).json()
+            first_warm_seconds = time.monotonic() - first_warm
             assert preflight["ready"]
             for d in preflight["scenes"]:
                 assert d["certificate"]["independent_verification"]["valid"]
@@ -325,10 +422,61 @@ with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
             checks.append(
                 "Four official live scenario/marginal decisions, solver feasibility, and byte-identical audited HTTP CSV"
             )
+        stage_memory = {
+            "startup_peak_bytes": startup_memory,
+            "preflight_and_api_peak_bytes": memory_sample(),
+        }
+        restart_runs = []
+        for restart in range(args.restarts):
+            begin = time.monotonic()
+            cmd(*DOCKER, "restart", "-t", "35", NAME)
+            for _ in range(args.startup_timeout):
+                try:
+                    with httpx.Client(trust_env=False, timeout=3) as probe:
+                        if (
+                            probe.get("http://127.0.0.1:18080/healthz").status_code
+                            == 200
+                        ):
+                            break
+                except httpx.HTTPError:
+                    pass
+                time.sleep(1)
+            else:
+                raise RuntimeError("Restart did not become ready")
+            ready_seconds = time.monotonic() - begin
+            with httpx.Client(
+                base_url=url, verify=context, trust_env=False, timeout=90
+            ) as recovered:
+                # Signing values remain the same; old session tickets must still work after process loss.
+                recovered.cookies.update(c.cookies)
+                assert recovered.get("/api/bootstrap").status_code == 200
+                warm_begin = time.monotonic()
+                r = recovered.post("/api/demo/preflight", headers=origin)
+                assert r.status_code == 200, r.text
+                assert len(r.json()["scenes"]) == 4
+                assert (
+                    hashlib.sha256(recovered.get("/api/export").content).hexdigest()
+                    == hashlib.sha256(csv).hexdigest()
+                )
+            restart_runs.append(
+                {
+                    "ready_seconds": ready_seconds,
+                    "guide_warm_seconds": time.monotonic() - warm_begin,
+                    "peak_bytes": memory_sample(),
+                    "cookie_recovered": True,
+                    "csv_unchanged": True,
+                }
+            )
+        scene_seconds = []
         errors = []
         with sync_playwright() as pw:
             browser = pw.chromium.launch(
-                executable_path="/usr/bin/chromium",
+                executable_path=os.environ.get("CHROMIUM_PATH")
+                or (
+                    "/usr/bin/chromium"
+                    if Path("/usr/bin/chromium").exists()
+                    else pw.chromium.executable_path
+                ),
                 headless=True,
                 args=["--no-sandbox", "--ignore-certificate-errors-spki-list=" + pin],
             )
@@ -344,9 +492,11 @@ with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
             page.get_by_role("button", name="Start guided demo", exact=True).click()
             page.locator('.result[aria-busy="false"]').wait_for()
             for step in range(1, 5):
+                scene_begin = time.monotonic()
                 page.locator(".guide-progress button").nth(step).click()
                 page.locator('.result[aria-busy="false"]').wait_for()
                 assert page.locator(f'[data-demo-step="{step}"]').is_visible()
+                scene_seconds.append(time.monotonic() - scene_begin)
             with page.expect_download() as download:
                 page.get_by_role(
                     "button", name="Download 567-row official plan", exact=True
@@ -396,19 +546,53 @@ with tempfile.TemporaryDirectory(prefix="shiftwise-production-") as directory:
         checks.append(
             "Production Chromium login, five guided scenes, real demand/availability recalculation, timeout/retry, CSV download and logout; no page exceptions"
         )
+        stage_memory["complete_demo_peak_bytes"] = memory_sample()
+        oom_state = json.loads(
+            cmd(*DOCKER, "inspect", "--format", "{{json .State}}", NAME)
+        )
+        assert not oom_state["OOMKilled"]
         server.shutdown()
+        # Restarts reset the process counters. Include every recorded stage,
+        # including the first preflight, rather than only the final process.
+        peak_memory = max(
+            list(stage_memory.values()) + [r["peak_bytes"] for r in restart_runs]
+        )
         result = {
             "passed": True,
+            "strict_container_test_passed": cgroups_verified,
+            "verdict": (
+                "PASS under actual container limits"
+                if cgroups_verified
+                else "Functional application-probe pass only; strict container limits unverified"
+            ),
             "startup_seconds": startup,
+            "first_guide_warm_seconds": first_warm_seconds,
+            "warm_scene_seconds": scene_seconds,
+            "memory_limit": args.memory,
+            "memory_swap_limit": args.memory,
+            "cpus": args.cpus,
+            "peak_memory_bytes": peak_memory,
+            "peak_memory_mib": peak_memory / 1024**2,
+            "resource_limits_verified": cgroups_verified,
+            "kernel_memory_max": kernel_memory,
+            "kernel_cpu_max": kernel_cpu,
+            "kernel_swap_max": kernel_swap,
+            "software_probe": probe_sample() if args.software_probe else None,
+            "memory_measurement": (
+                "768 MiB virtual-address guard and monitored 512 MiB RSS ceiling; VmHWM high-water measurement; NOT a cgroup/file-cache limit"
+                if args.software_probe
+                else "Linux cgroup v2 memory.peak, including file cache/tmpfs"
+            ),
+            "stage_memory": stage_memory,
+            "restart_runs": restart_runs,
+            "oom_killed": False,
             "checks": checks,
             "public_site_live": False,
             "image": "shiftwise-demo:prepared",
             "public_tls_verified": False,
             "tls_test": "Ephemeral local CA verified by httpx; Chromium trusts only the generated leaf SPKI. Render public TLS is not tested until deployment.",
         }
-        (ROOT / "artifacts/production_acceptance.json").write_text(
-            json.dumps(result, indent=2)
-        )
+        report_path.write_text(json.dumps(result, indent=2))
         print(json.dumps(result, indent=2))
     finally:
         cleanup()

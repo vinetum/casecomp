@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "strict_container_test_passed": false,
+  "status": "BLOCKED: Docker cgroup driver is none; requested CPU/RAM limits are not enforced",
+  "public_site_live": false
+}

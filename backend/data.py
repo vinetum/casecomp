@@ -323,14 +323,13 @@ def audit():
         "Scenario": "comp_Scenario",
         "DataDictionary": "DATA_DICTIONARY",
     }
-    for sheet, name in sheets.items():
-        x = pd.read_excel(
-            RAW / "Costco_Workforce_Case_Student_DataPack.xlsx", sheet_name=sheet
-        )
-        check(
-            "workbook matches " + sheet,
-            x.fillna("").astype(str).equals(read(name).fillna("").astype(str)),
-        )
+    with pd.ExcelFile(RAW / "Costco_Workforce_Case_Student_DataPack.xlsx") as workbook:
+        for sheet, name in sheets.items():
+            x = pd.read_excel(workbook, sheet_name=sheet)
+            check(
+                "workbook matches " + sheet,
+                x.fillna("").astype(str).equals(read(name).fillna("").astype(str)),
+            )
     result = {
         "passed": all(c["passed"] for c in checks),
         "checks": checks,

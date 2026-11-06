@@ -13,11 +13,14 @@ from .security import DemoBoundary, Settings
 
 @lru_cache(maxsize=1)
 def get_engine():
-    return Engine()
+    return Engine(diagnostics=False)
 
 
 @asynccontextmanager
 async def lifespan(app):
+    import anyio
+
+    anyio.to_thread.current_default_thread_limiter().total_tokens = 4
     get_engine()
     yield
 

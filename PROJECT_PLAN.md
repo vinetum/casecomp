@@ -28,5 +28,13 @@
 - [x] Mac installers/launchers, both architecture wheel checks and portable lifecycle test.
 - [x] Beginner deployment/backup/checklist documentation and readiness report.
 - [x] Publish tested work branch to the existing GitHub repository.
-- [ ] User Render authorization, GitHub connection, paid-service approval and public-site verification.
+- [ ] User Render authorization, GitHub connection, Free / $0 selection and public-site verification.
 - [ ] First installation and Wi-Fi-off rehearsal on the user's physical MacBook.
+
+## Zero-budget Free adaptation
+- [x] Free Blueprint with preserved authentication and complete model/UI features.
+- [x] Reuse identical model fits, single workbook open, exact CP-SAT domain pruning, bounded cache/threads and web-only omission of offline plotting.
+- [x] Detect unenforced Docker flags; provide a cgroup-verifying strict desktop acceptance script.
+- [x] Complete labeled CPU-paced application probe: five browser guide scenes, custom scenario, CSV, error/retry and two restarts; publish measured timing/RSS with limitations.
+- [ ] Strict whole-container 512 MiB/no-swap/0.1 CPU execution: blocked on this rootless daemon (cgroups disabled); do not mark certified.
+- [ ] Actual Render Free deployment, natural sleep/wakeup, HTTPS/provider quotas: intentionally not executed.
