@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: shiftwise-demo
+    runtime: docker
+    plan: standard
+    branch: work
+    region: oregon
+    numInstances: 1
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: "off"
+    envVars:
+      - key: SHIFTWISE_ENV
+        value: production
+      - key: SHIFTWISE_DEMO_PASSWORD
+        sync: false
+      - key: SHIFTWISE_SESSION_SECRET
+        generateValue: true
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"

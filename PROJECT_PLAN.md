@@ -20,3 +20,12 @@
 - [x] Distinct labeled error reference, local cache warmup, offline runtime checks.
 - [x] Actual screenshots, vector/raster charts, live JSON and generated timed run of show.
 - [x] Full test/build/export gates; original source inputs and audited staffing preserved.
+
+## Prompt 4 deployment preparation
+- [x] Single-service Render Blueprint and multi-stage non-root Docker image.
+- [x] Production login/session/host/origin/timeout/resource boundaries and security tests.
+- [x] Actual clean-image production HTTPS/browser/model/export acceptance.
+- [x] Mac installers/launchers, both architecture wheel checks and portable lifecycle test.
+- [x] Beginner deployment/backup/checklist documentation and readiness report.
+- [ ] User Render authorization, GitHub connection, paid-service approval and public-site verification.
+- [ ] First installation and Wi-Fi-off rehearsal on the user's physical MacBook.

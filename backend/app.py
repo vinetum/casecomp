@@ -3,11 +3,12 @@ from functools import lru_cache
 from typing import Literal
 from io import StringIO
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import Response
+from fastapi.responses import Response, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from .data import ROOT, native
 from .engine import Engine
+from .security import DemoBoundary, Settings
 
 
 @lru_cache(maxsize=1)
@@ -21,7 +22,15 @@ async def lifespan(app):
     yield
 
 
-app = FastAPI(title="SHIFTWISE", version="1.0.0", lifespan=lifespan)
+app = FastAPI(
+    title="SHIFTWISE",
+    version="1.0.0",
+    lifespan=lifespan,
+    docs_url=None,
+    redoc_url=None,
+    openapi_url=None,
+)
+app.add_middleware(DemoBoundary, settings=Settings.from_env())
 
 
 class Selection(BaseModel):
@@ -41,6 +50,22 @@ class Selection(BaseModel):
     demand_factor: float = Field(default=1.0, ge=0.7, le=1.5)
     availability_factor: float = Field(default=1.0, ge=0.0, le=1.0)
     uncertainty: Literal["central", "lower", "upper"] = "central"
+
+
+@app.exception_handler(RuntimeError)
+async def calculation_failure(request, error):
+    return JSONResponse(
+        {
+            "detail": "Calculation could not finish within the resource budget. Retry shortly."
+        },
+        status_code=503,
+        headers={"Retry-After": "2"},
+    )
+
+
+@app.get("/healthz")
+def readiness():
+    return {"status": "ready"}
 
 
 @app.get("/api/health")

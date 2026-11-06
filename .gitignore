@@ -7,3 +7,10 @@ frontend/dist/
 *.pid
 .playwright/
 *.tsbuildinfo
+
+.venv-mac/
+.local-run/
+.env
+.env.*
+*.pem
+*.key

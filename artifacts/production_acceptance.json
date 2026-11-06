@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "startup_seconds": 27.658040762000383,
+  "checks": [
+    "Production image exits on missing required secrets/hostname before serving requests",
+    "Clean Docker startup as uid 10001 with read-only source/image and bounded memory/CPU/PIDs",
+    "CA-verified local HTTPS: session cookie, CSRF, hostname, payload limits and raw-source/OpenAPI denial",
+    "Four official live scenario/marginal decisions, solver feasibility, and byte-identical audited HTTP CSV",
+    "Production Chromium login, five guided scenes, real demand/availability recalculation, timeout/retry, CSV download and logout; no page exceptions"
+  ],
+  "public_site_live": false,
+  "image": "shiftwise-demo:prepared",
+  "public_tls_verified": false,
+  "tls_test": "Ephemeral local CA verified by httpx; Chromium trusts only the generated leaf SPKI. Render public TLS is not tested until deployment."
+}

@@ -107,14 +107,20 @@ async function api<T>(url: string, init?: RequestInit): Promise<T> {
     r = await fetch(url, { ...init, signal: AbortSignal.timeout(45000) });
   } catch {
     throw new Error(
-      "The local decision engine did not respond. Check that it is running, then retry. No new recommendation is shown.",
+      "The decision engine did not respond. Check that it is running, then retry. No new recommendation is shown.",
     );
+  }
+  if (r.status === 401) {
+    window.location.assign("/login");
+    throw new Error("Your demo session expired. Please sign in again.");
   }
   if (!r.ok)
     throw new Error(
-      r.status === 503
-        ? "The solver could not prove a recommendation in time. Retry or restore official assumptions. No new recommendation is shown."
-        : `Calculation unavailable (${r.status}). Check the selected inputs and retry.`,
+      r.status === 429
+        ? "Too many requests. Please wait one minute before recalculating."
+        : r.status === 503
+          ? "The engine is busy or could not prove a recommendation in time. Retry or restore official assumptions. No new recommendation is shown."
+          : `Calculation unavailable (${r.status}). Check the selected inputs and retry.`,
     );
   return r.json();
 }
@@ -141,7 +147,13 @@ function App() {
     [tour, setTour] = useState(-1),
     [exportError, setExportError] = useState(""),
     [frontierIndex, setFrontierIndex] = useState(0);
+  const [protectedDemo, setProtectedDemo] = useState(false);
   const sequence = useRef(0);
+  useEffect(() => {
+    api<{ protected: boolean }>("/api/session")
+      .then((s) => setProtectedDemo(s.protected))
+      .catch(() => {});
+  }, []);
   useEffect(() => {
     api<Bootstrap>("/api/bootstrap")
       .then(setBoot)
@@ -210,6 +222,12 @@ function App() {
     setExportError("");
     try {
       const r = await fetch(`/api/export?team_id=${encodeURIComponent(team)}`);
+      if (r.status === 401) {
+        window.location.assign("/login");
+        return;
+      }
+      if (r.status === 429)
+        throw new Error("Please wait one minute before downloading again.");
       if (!r.ok)
         throw new Error(
           "Use a 1–64 character team ID starting with a letter or number; letters, numbers, spaces, hyphens and underscores only.",
@@ -332,7 +350,10 @@ function App() {
           {tabs.map((t, i) => (
             <button
               key={t.name}
-              onClick={() => { setTab(i); setTour(-1); }}
+              onClick={() => {
+                setTab(i);
+                setTour(-1);
+              }}
               className={i === tab ? "active" : ""}
             >
               <t.icon size={18} />
@@ -374,8 +395,15 @@ function App() {
               ? "Calculation needs attention"
               : loading
                 ? "Computing"
-                : "Local decision engine · online"}
+                : "Decision engine · online"}
             <div className="avatar">SW</div>
+            {protectedDemo && (
+              <form method="post" action="/logout">
+                <button className="tour" type="submit">
+                  Lock demo
+                </button>
+              </form>
+            )}
           </div>
         </header>
         <div className="page">

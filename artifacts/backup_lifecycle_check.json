@@ -1,0 +1,8 @@
+{
+  "portable_start_warmup_status_reuse_stop": "passed on Linux with the real application",
+  "mac_wrappers_bash_parse": "passed",
+  "physical_mac_tested": false,
+  "python": "3.12",
+  "supported_macos": "14+",
+  "apple_silicon_and_intel_wheels": "all 44 locked dependencies resolved for each architecture"
+}

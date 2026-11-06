@@ -4,6 +4,7 @@ from dataclasses import dataclass
 import numpy as np
 from ortools.sat.python import cp_model
 from .data import DEPTS
+from .runtime_budget import solver_seconds
 
 MODES = {"Service First": 0.0, "Balanced": 0.02, "Budget Conscious": 0.06}
 SCALE = 1000000
@@ -119,7 +120,7 @@ class GroupOptimizer:
         solver = cp_model.CpSolver()
         solver.parameters.num_search_workers = 1
         solver.parameters.random_seed = 26
-        solver.parameters.max_time_in_seconds = 15
+        solver.parameters.max_time_in_seconds = solver_seconds()
         status = solver.solve(model)
         if status != cp_model.OPTIMAL:
             raise RuntimeError(
@@ -128,6 +129,7 @@ class GroupOptimizer:
         bestcost = sum(solver.value(v) for v in costs)
         model.add(sum(costs) == bestcost)
         model.maximize(sum(scores))
+        solver.parameters.max_time_in_seconds = solver_seconds()
         status = solver.solve(model)
         if status != cp_model.OPTIMAL:
             raise RuntimeError("Service tie-break not proven optimal")
@@ -352,6 +354,7 @@ class GroupOptimizer:
         model.maximize(gain)
         solver = cp_model.CpSolver()
         solver.parameters.num_search_workers = 1
+        solver.parameters.max_time_in_seconds = solver_seconds()
         if solver.solve(model) != cp_model.OPTIMAL:
             raise RuntimeError("Last Worker service solve not optimal")
         bestgain = solver.value(gain)
@@ -361,6 +364,7 @@ class GroupOptimizer:
             idx, [round(o["incremental_cost"] * 1000) for o in options], cost
         )
         model.minimize(cost)
+        solver.parameters.max_time_in_seconds = solver_seconds()
         if solver.solve(model) != cp_model.OPTIMAL:
             raise RuntimeError("Last Worker cost solve not optimal")
         best = options[solver.value(idx)]
