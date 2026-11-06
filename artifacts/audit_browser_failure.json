@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": [
+    "Injected 503 hides stale decision",
+    "Retry restores fresh computed values"
+  ]
+}

@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import pytest
 from backend.data import KEY, GROUP, read
-from backend.optimizer import GroupOptimizer
+from backend.optimizer import GroupOptimizer, SCALE
 from backend.verify import verify_totals, validate_submission
 
 
@@ -139,13 +139,13 @@ def test_integer_optimum_against_independent_exhaustive_small_fixture(engine):
                 float(
                     engine.service.probability(r.dept_id, r.demand, count, r.paid_hours)
                 )
-                * 10000
+                * SCALE
             )
             for r, count in zip(g.sort_values("dept_id").itertuples(), n)
         )
         candidates.append((score, sum(a["cost"] for a in v["allocations"])))
     best = max(s for s, c in candidates)
-    floor = best - round(0.02 * 3 * 10000)
+    floor = best - round(0.02 * 3 * SCALE)
     minimum = min(round(c * 1000) for s, c in candidates if s >= floor)
     opt = GroupOptimizer(g, engine.service)
     plan = opt.solve(0.02)
@@ -213,7 +213,7 @@ def test_independently_reproduces_draft_conflicts(engine):
     assert all(summary[i] == counts.get(i, 0) for i in [1, 2, 3])
 
 
-def test_low_probability_plateau_preserves_strongest_workload_coverage(engine):
+def test_low_probability_plateau_does_not_force_dominated_spending(engine):
     g = group(engine, 1)
     g["demand"] *= 3
     g["demand_low"] = g.demand * 0.9
@@ -221,6 +221,6 @@ def test_low_probability_plateau_preserves_strongest_workload_coverage(engine):
     opt = GroupOptimizer(g, engine.service)
     p = opt.solve()
     assert verify_totals(g, total_frame(g, p["allocations"]))["valid"]
-    assert sum(a["employees"] for a in p["allocations"]) > int(g.min_staff.sum())
-    # Equal clipped service probabilities must not cause near-empty departments for cost savings.
+    assert sum(a["employees"] for a in p["allocations"]) == int(g.min_staff.sum())
+    # With no modeled marginal gain, cost is secondary; unsupported service must be disclosed, not invented.
     assert p["solver_status"] == "OPTIMAL"

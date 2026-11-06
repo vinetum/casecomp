@@ -1,0 +1,25 @@
+claim,value,unit,source_path,qualification
+submission_rows,567,rows,artifacts/audit_oracle_results.json,Exact official template and independent capacity/cost audit
+total_projected_cost,982297.695,USD,artifacts/audit_decimal_cost_trace.csv,Sum of three alternative scenario plans; not one week of realized spending
+dominated_official_groups,0,groups,artifacts/audit_exhaustive_groups.csv,Exhaustive cost/service comparison over all source-feasible triples
+exhaustive_feasible_triples,342687,allocations,artifacts/audit_exhaustive_groups.csv,Sum across 189 independent groups; not Monte Carlo simulations
+macro_WAPE_calendar_3,0.04344567067714251,ratio,artifacts/audit_forecast_metrics.csv,"Past-only weekly-origin selection evidence, not future actual performance"
+macro_WAPE_ridge,0.08157225296359381,ratio,artifacts/audit_forecast_metrics.csv,"Past-only weekly-origin selection evidence, not future actual performance"
+macro_WAPE_same_weekday_2,0.058116073492706005,ratio,artifacts/audit_forecast_metrics.csv,"Past-only weekly-origin selection evidence, not future actual performance"
+macro_WAPE_same_weekday_3,0.04344567067714251,ratio,artifacts/audit_forecast_metrics.csv,"Past-only weekly-origin selection evidence, not future actual performance"
+macro_WAPE_same_weekday_4,0.03750247819256452,ratio,artifacts/audit_forecast_metrics.csv,"Past-only weekly-origin selection evidence, not future actual performance"
+historical_attainment_38,0.7696476964769647,ratio,v_ShiftHistory.csv,Simulated historical actual outcomes
+historical_attainment_92,0.6991869918699187,ratio,v_ShiftHistory.csv,Simulated historical actual outcomes
+historical_attainment_95,0.8825396825396825,ratio,v_ShiftHistory.csv,Simulated historical actual outcomes
+BASE_cost,326103.14,USD,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+BASE_modeled_service,0.9920492747707512,ratio,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+BASE_infeasible_draft_groups,0,groups,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+PEAK_cost,348786.975,USD,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+PEAK_modeled_service,0.97963808384201,ratio,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+PEAK_infeasible_draft_groups,0,groups,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+DISRUPT_cost,307407.58,USD,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+DISRUPT_modeled_service,0.9425492747707512,ratio,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+DISRUPT_infeasible_draft_groups,10,groups,artifacts/scenario_summary.csv,"Model projection, equal-weight open blocks; infeasible draft is hypothetical"
+Last_Worker_recipient_gain,0.05139358290164964,probability_delta,artifacts/demonstration_snapshot.json,"Warehouse 2 / Feb 13 / OPEN / DISRUPT / Balanced; modeled marginal effect, not causal"
+Last_Worker_donor_effect,0.0,probability_delta,artifacts/demonstration_snapshot.json,"Warehouse 2 / Feb 13 / OPEN / DISRUPT / Balanced; modeled marginal effect, not causal"
+Last_Worker_incremental_cost,187.19999999999982,USD,artifacts/demonstration_snapshot.json,"Warehouse 2 / Feb 13 / OPEN / DISRUPT / Balanced; modeled marginal effect, not causal"

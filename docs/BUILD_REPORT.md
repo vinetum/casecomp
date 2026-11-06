@@ -1,3 +1,5 @@
+> Historical Prompt 1 record at commit 9c66981. Superseded costs, coverage objective and precision are corrected in [the independent audit](../artifacts/INDEPENDENT_AUDIT.md). Do not use this historical report as current presentation evidence.
+
 # Prompt 1 build acceptance
 
 Completed on task branch `work`. Prompts 2 and 3 were not executed.

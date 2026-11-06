@@ -10,8 +10,9 @@ from .data import read, OUT
 
 def metrics(y, p):
     bins = []
-    for lo in np.arange(0, 1, 0.2):
-        mask = (p >= lo) & (p < lo + 0.2 + 1e-10)
+    for i, lo in enumerate(np.linspace(0, 1, 6)[:-1]):
+        bins_index = np.minimum((np.asarray(p) * 5).astype(int), 4)
+        mask = bins_index == i
         if mask.any():
             bins.append(
                 dict(
@@ -134,7 +135,8 @@ class Service:
             if kind == "logistic"
             else model.predict(flat)
         )
-        return np.clip(p, 0.005, 0.995).reshape(n.shape)
+        bounded = np.clip(p, 0.005, 0.995).reshape(n.shape)
+        return np.where(n * hours > 0, bounded, 0.0)
 
     def chart(self):
         import matplotlib

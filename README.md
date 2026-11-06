@@ -77,4 +77,4 @@ Read [methodology](docs/METHODOLOGY.md), [decision logic](docs/DECISION_LOGIC.md
 
 The forecast benchmark is not claimed to be beaten. Holiday sample support is limited; uncertainty envelopes are stress ranges rather than confidence intervals. Optimality applies to the finite aggregate model, not a named individual roster or guaranteed service. Closed blocks are excluded from attainment averages. Workload units are never pooled across departments. The Last Worker can honestly recommend no move.
 
-This implements **Prompt 1 only**. The independent-audit and demo-polish prompts have not been executed. Screenshots and tests here are the master-build acceptance checks.
+Prompts **1 and 2** are implemented. See [independent audit](artifacts/INDEPENDENT_AUDIT.md) and [verified presentation claims](artifacts/verified_presentation_claims.csv). Prompt 3 remains unexecuted.

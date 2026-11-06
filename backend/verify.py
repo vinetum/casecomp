@@ -21,7 +21,12 @@ def verify_totals(grid, totals, require_minimum=True):
         }
     d = grid.merge(totals[KEY + ["submitted_employees"]], on=KEY, validate="one_to_one")
     values = pd.to_numeric(d.submitted_employees, errors="coerce")
-    if not (np.isfinite(values) & (values >= 0) & (values % 1 == 0)).all():
+    if not (
+        np.isfinite(values)
+        & (values >= 0)
+        & (values % 1 == 0)
+        & (values <= np.iinfo(np.int64).max // 2)
+    ).all():
         return {
             "valid": False,
             "errors": ["All employee counts must be finite nonnegative integers"],

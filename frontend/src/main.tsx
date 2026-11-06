@@ -485,7 +485,7 @@ function App() {
               workforce allocations…
             </div>
           )}
-          {decision && (
+          {decision && !error && (
             <div
               className={loading ? "result updating" : "result"}
               aria-busy={loading}

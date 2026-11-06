@@ -1,0 +1,14 @@
+{
+  "submission": {
+    "valid": true,
+    "errors": [],
+    "rows": 567,
+    "cost_decimal": "982297.695"
+  },
+  "groups": 189,
+  "candidate_triples": 342687,
+  "dominated_groups": 0,
+  "prior_dominated_groups": 9,
+  "prior_dominated_excess_cost": 15573.230000000001,
+  "max_true_score_gap": 0.0
+}

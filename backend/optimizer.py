@@ -6,8 +6,7 @@ from ortools.sat.python import cp_model
 from .data import DEPTS
 
 MODES = {"Service First": 0.0, "Balanced": 0.02, "Budget Conscious": 0.06}
-SCALE = 10000
-COVERAGE_BASE = 30001  # exceeds combined three-department 0..10000 coverage tie-break
+SCALE = 1000000
 
 
 @dataclass
@@ -17,7 +16,6 @@ class Choice:
     cost: float
     score: int
     deficit: int
-    coverage: int
 
 
 def canonical(rows, totals):
@@ -87,31 +85,12 @@ class GroupOptimizer:
                     for r, n in zip(rows, totals)
                     if r.is_open
                 )
-                coverage = sum(
-                    (
-                        round(
-                            min(
-                                1.0,
-                                n
-                                * r.paid_hours
-                                / (r.demand * service.standards[int(r.dept_id)]),
-                            )
-                            * SCALE
-                        )
-                        if r.is_open and r.demand > 0
-                        else (SCALE if r.is_open else 0)
-                    )
-                    for r, n in zip(rows, totals)
-                )
-                choices.append(Choice(totals, parts, cost, score, deficit, coverage))
+                choices.append(Choice(totals, parts, cost, score, deficit))
             # Lexicographic safety: minimum total safety shortfall precedes service.
             floor = min(c.deficit for c in choices)
             self.tables.append([c for c in choices if c.deficit == floor])
         self.min_deficit = sum(t[0].deficit for t in self.tables)
         self.max_score = sum(max(c.score for c in t) for t in self.tables)
-        self.max_utility = sum(
-            max(c.score * COVERAGE_BASE + c.coverage for c in t) for t in self.tables
-        )
 
     def solve(self, tolerance=0.0):
         model = cp_model.CpModel()
@@ -123,7 +102,7 @@ class GroupOptimizer:
             for c in table:
                 values.append(
                     [v for n, p in zip(c.totals, c.parts) for v in (n, *p)]
-                    + [round(c.cost * 1000), c.score * COVERAGE_BASE + c.coverage]
+                    + [round(c.cost * 1000), c.score]
                 )
             cols = list(zip(*values))
             vs = [
@@ -135,7 +114,7 @@ class GroupOptimizer:
             costs.append(vs[-2])
             scores.append(vs[-1])
         loss = round(tolerance * self.open_count * SCALE)
-        model.add(sum(scores) >= self.max_utility - loss * COVERAGE_BASE)
+        model.add(sum(scores) >= self.max_score - loss)
         model.minimize(sum(costs))
         solver = cp_model.CpSolver()
         solver.parameters.num_search_workers = 1
@@ -366,14 +345,15 @@ class GroupOptimizer:
             }
         model = cp_model.CpModel()
         idx = model.new_int_var(0, len(options) - 1, "last_worker_choice")
-        gain = model.new_int_var(-30000, 30000, "net_service_gain")
+        gain = model.new_int_var(-3 * SCALE, 3 * SCALE, "net_service_gain")
         model.add_element(
             idx, [round(o["net_expected_targets_gain"] * SCALE) for o in options], gain
         )
         model.maximize(gain)
         solver = cp_model.CpSolver()
         solver.parameters.num_search_workers = 1
-        solver.solve(model)
+        if solver.solve(model) != cp_model.OPTIMAL:
+            raise RuntimeError("Last Worker service solve not optimal")
         bestgain = solver.value(gain)
         model.add(gain == bestgain)
         cost = model.new_int_var(-10000000, 10000000, "incremental_cost_mills")
@@ -381,7 +361,8 @@ class GroupOptimizer:
             idx, [round(o["incremental_cost"] * 1000) for o in options], cost
         )
         model.minimize(cost)
-        solver.solve(model)
+        if solver.solve(model) != cp_model.OPTIMAL:
+            raise RuntimeError("Last Worker cost solve not optimal")
         best = options[solver.value(idx)]
         positive = best["net_expected_targets_gain"] > 1 / SCALE
         return {

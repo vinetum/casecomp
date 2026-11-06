@@ -775,5 +775,5 @@
       "minimum_staffing_shortfall": 0
     }
   ],
-  "explanation": "Balanced assigns 37 block employees at $5,968.16, a $-369.20 change from the draft. Mean modeled target attainment across open departments is 97.8%. The cost-minimizing CP-SAT solution allows 2% mean attainment loss from the maximum, after minimizing safety shortfalls. Independent workforce checks pass. Service probabilities are estimates, not guaranteed wait times."
+  "explanation": "Balanced assigns 37 block employees at $5,968.16, a $-369.20 change from the draft. Mean modeled target attainment across open departments is 97.8%. The cost-minimizing CP-SAT solution allows 2% mean attainment loss from the maximum, after minimizing safety shortfalls. Independent workforce checks pass. Service probabilities are estimates, not guaranteed wait times. If modeled service is at its lower bound, extra workers have unvalidated marginal value; review the stress range and capacity certificate before operational use."
 }

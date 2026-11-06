@@ -119,7 +119,7 @@ class Engine:
                 if not vd["valid"]
                 else ""
             )
-            + "Service probabilities are estimates, not guaranteed wait times."
+            + "Service probabilities are estimates, not guaranteed wait times. If modeled service is at its lower bound, extra workers have unvalidated marginal value; review the stress range and capacity certificate before operational use."
         )
         return {
             "selection": dict(

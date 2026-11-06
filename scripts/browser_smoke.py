@@ -111,6 +111,7 @@ with sync_playwright() as pw:
             "button", name="Download staffing submission", exact=True
         ).click()
     downloaded = Path(download.value.path())
+    download.value.save_as(str(out / "browser_download.csv"))
     rows = list(csv.DictReader(io.StringIO(downloaded.read_text())))
     assert len(rows) == 567 and all(r["team_id"] == "BROWSER_TEST" for r in rows)
     assert all(int(r["submitted_employees"]) >= 0 for r in rows)

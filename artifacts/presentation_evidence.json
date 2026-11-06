@@ -53,14 +53,14 @@
     {
       "scenario_id": 3,
       "scenario_code": "DISRUPT",
-      "cost": 322980.80999999994,
+      "cost": 307407.58,
       "draft_cost_hypothetical": 332374.22,
       "modeled_service": 0.9425492747707511,
       "draft_modeled_service": 0.9168333162263074,
       "at_risk_blocks": 10,
-      "employees": 2323,
-      "overtime": 79,
-      "flex": 15,
+      "employees": 2182,
+      "overtime": 50,
+      "flex": 18,
       "infeasible_draft_groups": 10
     }
   ],
@@ -68,7 +68,7 @@
     "valid": true,
     "rows": 567,
     "errors": [],
-    "recalculated_cost": 997870.9249999999
+    "recalculated_cost": 982297.695
   },
   "data_selected_demo": {
     "store_id": 2,

@@ -692,7 +692,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.8201333333333333,
+    "maximum_joint_service": 0.8201443333333334,
     "constraints": [
       {
         "dept_id": 38,
@@ -2399,7 +2399,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.9928,
+    "maximum_joint_service": 0.9928123333333333,
     "constraints": [
       {
         "dept_id": 38,
@@ -3313,7 +3313,7 @@
     "shift_code": "EVE",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.9918,
+    "maximum_joint_service": 0.9917845,
     "constraints": [
       {
         "dept_id": 38,
@@ -3415,7 +3415,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.6818666666666666,
+    "maximum_joint_service": 0.6818736666666667,
     "constraints": [
       {
         "dept_id": 38,
@@ -3716,7 +3716,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.8201333333333333,
+    "maximum_joint_service": 0.8201443333333334,
     "constraints": [
       {
         "dept_id": 38,
@@ -4335,7 +4335,7 @@
     "shift_code": "EVE",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.96415,
+    "maximum_joint_service": 0.9641665,
     "constraints": [
       {
         "dept_id": 38,
@@ -4437,7 +4437,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.7195999999999999,
+    "maximum_joint_service": 0.7195903333333334,
     "constraints": [
       {
         "dept_id": 38,
@@ -5458,7 +5458,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.8593666666666667,
+    "maximum_joint_service": 0.859376,
     "constraints": [
       {
         "dept_id": 38,
@@ -6773,7 +6773,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.8201333333333333,
+    "maximum_joint_service": 0.8201443333333334,
     "constraints": [
       {
         "dept_id": 38,
@@ -7249,26 +7249,22 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
-          "Cross-training cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 22,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 13
       },
       {
         "dept_id": 92,
-        "active": [
-          "Regular pool fully committed (including loans)"
-        ],
+        "active": [],
         "max_employees": 19,
         "standalone_max_probability": 0.995,
         "probability": 0.995,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 1
       },
       {
         "dept_id": 95,
@@ -7300,15 +7296,13 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
-          "Cross-training cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 23,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 13
       },
       {
         "dept_id": 92,
@@ -7317,7 +7311,7 @@
         "standalone_max_probability": 0.995,
         "probability": 0.995,
         "minimum_shortfall": 0,
-        "regular_unused": 2
+        "regular_unused": 3
       },
       {
         "dept_id": 95,
@@ -7400,15 +7394,13 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
-          "Overtime cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 21,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 13
       },
       {
         "dept_id": 92,
@@ -7451,20 +7443,19 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
-          "Overtime cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 30,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 17
       },
       {
         "dept_id": 92,
         "active": [
-          "Regular pool fully committed (including loans)"
+          "Regular pool fully committed (including loans)",
+          "Cross-training cap binding"
         ],
         "max_employees": 21,
         "standalone_max_probability": 0.995,
@@ -7505,20 +7496,19 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
-          "Overtime cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 23,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 12
       },
       {
         "dept_id": 92,
         "active": [
-          "Regular pool fully committed (including loans)"
+          "Regular pool fully committed (including loans)",
+          "Cross-training cap binding"
         ],
         "max_employees": 26,
         "standalone_max_probability": 0.995,
@@ -7559,15 +7549,13 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
-          "Overtime cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 18,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 10
       },
       {
         "dept_id": 92,
@@ -7610,14 +7598,13 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 34,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 21
       },
       {
         "dept_id": 92,
@@ -7663,20 +7650,19 @@
       {
         "dept_id": 38,
         "active": [
-          "Regular pool fully committed (including loans)",
-          "Overtime cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 21,
         "standalone_max_probability": 0.005,
         "probability": 0.005,
         "minimum_shortfall": 0,
-        "regular_unused": 0
+        "regular_unused": 11
       },
       {
         "dept_id": 92,
         "active": [
-          "Regular pool fully committed (including loans)"
+          "Regular pool fully committed (including loans)",
+          "Cross-training cap binding"
         ],
         "max_employees": 27,
         "standalone_max_probability": 0.995,
@@ -7840,7 +7826,6 @@
         "dept_id": 95,
         "active": [
           "Regular pool fully committed (including loans)",
-          "Overtime cap binding",
           "95% modeled service objective unreachable with this pool"
         ],
         "max_employees": 3,
@@ -8530,7 +8515,7 @@
     "shift_code": "OPEN",
     "status": "FEASIBLE",
     "minimum_shortfall": 0,
-    "maximum_joint_service": 0.9928,
+    "maximum_joint_service": 0.9928123333333333,
     "constraints": [
       {
         "dept_id": 38,
