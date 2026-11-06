@@ -1,0 +1,495 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "v_ShiftHistory: rows / unique keys",
+      "passed": true,
+      "detail": "1134"
+    },
+    {
+      "check": "v_ShiftHistory: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: rows / unique keys",
+      "passed": true,
+      "detail": "567"
+    },
+    {
+      "check": "v_PlanningWeekGrid: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "TEAM_SUBMISSION_TEMPLATE: rows / unique keys",
+      "passed": true,
+      "detail": "567"
+    },
+    {
+      "check": "TEAM_SUBMISSION_TEMPLATE: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "PlanningWeek_BenchmarkForecast: rows / unique keys",
+      "passed": true,
+      "detail": "63"
+    },
+    {
+      "check": "PlanningWeek_BenchmarkForecast: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_FactShiftDemand: rows / unique keys",
+      "passed": true,
+      "detail": "1134"
+    },
+    {
+      "check": "comp_FactShiftDemand: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_FactShiftSchedule: rows / unique keys",
+      "passed": true,
+      "detail": "1323"
+    },
+    {
+      "check": "comp_FactShiftSchedule: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_FactShiftAvailability: rows / unique keys",
+      "passed": true,
+      "detail": "1701"
+    },
+    {
+      "check": "comp_FactShiftAvailability: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_FactShiftServiceLevel: rows / unique keys",
+      "passed": true,
+      "detail": "1134"
+    },
+    {
+      "check": "comp_FactShiftServiceLevel: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_ScenarioDemandAdjustment: rows / unique keys",
+      "passed": true,
+      "detail": "567"
+    },
+    {
+      "check": "comp_ScenarioDemandAdjustment: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_ShiftDefinition: rows / unique keys",
+      "passed": true,
+      "detail": "27"
+    },
+    {
+      "check": "comp_ShiftDefinition: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_LaborStandard: rows / unique keys",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "check": "comp_LaborStandard: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_LaborCostAssumption: rows / unique keys",
+      "passed": true,
+      "detail": "9"
+    },
+    {
+      "check": "comp_LaborCostAssumption: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_Scenario: rows / unique keys",
+      "passed": true,
+      "detail": "4"
+    },
+    {
+      "check": "comp_Scenario: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_ServiceMetricDefinition: rows / unique keys",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "check": "comp_ServiceMetricDefinition: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "comp_DimShift: rows / unique keys",
+      "passed": true,
+      "detail": "3"
+    },
+    {
+      "check": "comp_DimShift: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "DATA_DICTIONARY: rows / unique keys",
+      "passed": true,
+      "detail": "91"
+    },
+    {
+      "check": "DATA_DICTIONARY: preserved original",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: complete numeric fields",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: integer store_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: integer dept_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: integer is_open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: integer min_staff",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: integer available_regular_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: integer max_overtime_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: integer cross_trained_flex_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: department labels",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_ShiftHistory: pharmacy qualifications",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: complete numeric fields",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: integer store_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: integer dept_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: integer is_open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: integer min_staff",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: integer available_regular_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: integer max_overtime_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: integer cross_trained_flex_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: department labels",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "v_PlanningWeekGrid: pharmacy qualifications",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "template matches grid keys and metadata",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical range",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "planning range",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no training / planning overlap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "scenario codes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical daily reconciliation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical closed demand/staff",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical labels open only",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical service labels",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical worked accounting",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical demand source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical service source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical schedule source worked_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical schedule source worked_labor_hours",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical schedule source worked_regular_hours",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical schedule source worked_overtime_hours",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical productive hours",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "historical regular plus OT hours",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "planning draft source",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "planning closed availability",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "open shift durations",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shift definition paid_hours",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shift definition is_open",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "shift definition min_staff",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "exact official multipliers",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "BASE / DISRUPT workload multiplier",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "availability source available_regular_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "availability source max_overtime_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "availability source cross_trained_flex_employees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "regular loaded rates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "overtime loaded rates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "grid source loaded_regular_hourly_cost",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "grid source loaded_overtime_hourly_cost",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches ShiftHistory",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches PlanningWeekGrid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches BenchmarkForecast",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches ShiftDefinition",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches LaborStandard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches ServiceMetric",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches LaborCost",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches Scenario",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "workbook matches DataDictionary",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "source_sha256": {
+    "v_ShiftHistory": "a73a8ca88d54e21ec47078dd39be8d0d7ea5e3bb25aef3c552efff4446da0452",
+    "v_PlanningWeekGrid": "75d01de3dbc84713e90a16b3ca79420ee6d56f2aacaf450f84dd145b189d790a",
+    "TEAM_SUBMISSION_TEMPLATE": "609c1fde285cbbfccadfcb8dcddc97e5bb2a97932cdd06d6b063250903a159bd",
+    "PlanningWeek_BenchmarkForecast": "687e5a6651c9d32e764610410b4c6e3ebb670abd8cfd716ad4474bbd9ee2d43e",
+    "comp_FactShiftDemand": "18cb42cc9598b29e744e5487037e3b2179b12fa155aff309e5a2888e80286fc9",
+    "comp_FactShiftSchedule": "18f114f510b65d07982e9ead20ef9e226521c1a925f543df85e77aa5a472ceb0",
+    "comp_FactShiftAvailability": "1b52ed7c9b7390cb97f3ca7b2bd8ebf7486fa2d8cb0f06a90e775c1d0d4fcd3c",
+    "comp_FactShiftServiceLevel": "938f9c05537a2710ab6edbd4cd13fc90067e8a33b11a4cc6a012ca1c2f6e47f5",
+    "comp_ScenarioDemandAdjustment": "7f58fe10786813eaf6a20d879bf08e7926ad838b542d83b15183cd5c22a8b1e5",
+    "comp_ShiftDefinition": "e86de5ddb998f8992f981c8517d7d4c618badee2e8cabf0c18e09107a8006ef0",
+    "comp_LaborStandard": "bfd8ff8d1cd9a8729db55aef1d1edf6463ba2cbdb151ef54342a50ccbe6e9c20",
+    "comp_LaborCostAssumption": "9f10dce6a8e1c60cca9b3b2edb96f4b73044a2a30451568502fb4cd3f66baf2d",
+    "comp_Scenario": "8177495a665a987bba1ab14abc6794f6a82e69ff705181c12410d0652ed7d157",
+    "comp_ServiceMetricDefinition": "5da313cd017d4df4e97b977456dd901bfd103bc738eb1858677251fd44559732",
+    "comp_DimShift": "018e3ceddb2b3a348e359e7e1f7c8c3863f2cd4de2052647952d91c36971cd36",
+    "DATA_DICTIONARY": "98fc672b4b0ef60edfd8f8cbb5ff612428a851306ffc3c2ec4dac52367fcc52e"
+  },
+  "historical_open_blocks": 1053,
+  "planning_open_blocks": 540
+}

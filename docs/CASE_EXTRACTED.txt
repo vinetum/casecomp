@@ -1,0 +1,147 @@
+Texas MISA
+Fall 2026 Case
+Competition
+
+
+November 2026
+
+
+
+
+© 2026 CGI Inc.   1
+Costco Workforce Planning Challenge
+
+About Costco
+Costco Wholesale Corporation operates
+membership warehouses and e-commerce          Because of this operating model, staffing
+sites built around:                           decisions affect more than checkout speed.
+• Low prices                                  Labor levels also influence product
+• High sales volume                           availability, receiving, replenishment,
+                                              pharmacy services, membership support,
+• Rapid inventory turnover
+                                              safety, and the overall member experience.
+• A limited selection of nationally branded
+    and private-label products
+• Multiple specialty departments and
+    member services
+
+
+
+© 2026 CGI Inc.                                                                            2
+The Business Challenge
+Warehouse leaders make staffing decisions in an
+environment where demand can change based on:
+• Day of the week
+• Customer traffic
+• Holidays and promotions
+• Weather
+• Warehouse size
+• Department activity
+• Employee availability and qualifications
+• Callouts and overtime requirements
+Too much labor increases operating costs. Too little labor can
+result in longer wait times, slower replenishment, reduced
+product availability, and lower member satisfaction.
+
+Costco needs a practical way to balance labor, staffing
+coverage, and service levels.
+© 2026 CGI Inc.                                                  3
+The Case Prompt                             Your Solution Should Help
+                                            a Warehouse Leader
+                                            Understand:
+
+                                            • When demand is expected to
+Staffing levels must align with customer      increase or decrease
+demand while controlling labor costs.
+                                            • How staffing needs vary by
+Design a solution that helps warehouse
+                                              department and time period
+leaders forecast staffing needs, optimize
+schedules, and maintain service levels.     • How schedules or labor coverage
+                                              should be adjusted
+                                            • How the recommendation affects
+                                              labor costs and service levels
+                                            • What actions should be taken when
+                                              demand or staffing conditions change
+
+© 2026 CGI Inc.                                                              4
+The Decision Costco Needs to Make
+
+Your team must help Costco answer:
+How should the warehouse allocate labor across departments and time periods to meet
+expected demand at the lowest practical cost while maintaining service levels?
+
+Your plan must cover all three scenarios in the planning week (Feb 12-18, 2026):
+• Baseline: the expected week, including Valentine’s Day and Presidents’ Day
+• Peak Demand: a promotion launch and a winter-storm advisory that drive extra traffic
+• Disruption: illness and crew shortages that reduce available staff
+
+Your recommendation should show where, when, and how much labor is needed, which
+assumptions drive it, and what the warehouse leader should do when conditions shift.
+
+
+
+© 2026 CGI Inc.                                                                          5
+Solution Expectations
+Build a proof of concept, not just a dashboard. Any working
+tool a warehouse leader could use qualifies.
+
+Your solution should demonstrate how Costco could use data to
+make better staffing decisions.
+
+A dashboard may be included as part of the solution, but it
+should not be the solution by itself. Teams should go beyond
+displaying metrics and demonstrate how their approach:
+• Forecasts or estimates future demand
+• Converts demand into staffing requirements
+• Recommend schedules, staffing levels, or labor coverage
+• Balances labor cost with service-level objectives
+• Responds to changing conditions or scenarios
+• Explains why a recommendation was made
+
+© 2026 CGI Inc.                                                 6
+Available Data and Assumptions             Case Assumptions
+Available Data                             • The data is simulated for competition
+Teams will receive a simulated Costco        purposes and does not represent
+workforce-planning dataset containing:       confidential Costco data
+• Three Costco warehouses with different   • Students should clearly identify any
+   sizes and operating characteristics       additional assumptions they make
+• Three departments: Front End,            • Labor cost is calculated the same way
+   Merchandising/Stocking, and Pharmacy      for every team: regular staff first, then
+• Six weeks of historical demand and         cross-trained staff, then overtime. Rates
+   operating data (Jan 1-Feb 11, 2026)       are provided in the data.
+• Weekday, weekend, and holiday            • Teams must submit staffing plans for all
+   patterns                                  three scenarios: Baseline, Peak
+• Regular and overtime labor-cost            Demand, and Disruption
+   assumptions                             • Service-level measures should be used
+• A one week planning period (February       to evaluate whether a staffing
+   12-18, 2026) to forecast staff            recommendation meets operational
+© 2026 CGI Inc.
+                                             expectations                              7
+What to Submit
+                           Staffing             Proof of            Supporting
+Presentation                Plan                Concept              Analysis
+       Include your       The completed
+        diagnosis,      TEAM_SUBMISSI                               Include appendix
+          forecast,     ON_TEMPLATE.c                                 slides or files
+                                              A working tool that
+   recommendation,       sv, with the total                           showing your
+                                               takes a scenario
+        and how it        employees for                             forecast method,
+                                                  as input and
+     changes across     every warehouse,                            key assumptions,
+                                                shows staffing,
+          the three     department, date,                             and cost and
+                                                labor cost, and
+        scenarios,        and shift in all                          service compared
+                                                  service risk.
+    including a short    three scenarios.                            with the current
+       demo of your     You don’t need to                            draft schedules.
+    proof of concept      split totals into
+      (can be live or   regular, overtime,
+         recorded)      and cross-trained
+                                staff.
+
+
+© 2026 CGI Inc.                                                                         8
+

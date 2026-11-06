@@ -1,0 +1,1536 @@
+[
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 1,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 2,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 1,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-13', 'EVE') / department 38: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-13', 'MID') / department 38: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-14', 'EVE') / department 38: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-14', 'MID') / department 38: overtime / shared workforce capacity exceeded",
+      "(np.int64(3), np.int64(2), '2026-02-14', 'MID') / department 95: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-14', 'OPEN') / department 38: overtime / shared workforce capacity exceeded",
+      "(np.int64(3), np.int64(2), '2026-02-14', 'OPEN') / department 95: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-15', 'EVE') / department 38: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-15', 'OPEN') / department 38: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-16', 'EVE') / department 95: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(2), '2026-02-16', 'OPEN') / department 95: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 2,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-12",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-13",
+    "shift_code": "OPEN",
+    "valid": false,
+    "errors": [
+      "(np.int64(3), np.int64(4), '2026-02-13', 'OPEN') / department 92: overtime / shared workforce capacity exceeded"
+    ]
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-14",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-15",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-16",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-17",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "EVE",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "MID",
+    "valid": true,
+    "errors": []
+  },
+  {
+    "scenario_id": 3,
+    "store_id": 4,
+    "day_date": "2026-02-18",
+    "shift_code": "OPEN",
+    "valid": true,
+    "errors": []
+  }
+]

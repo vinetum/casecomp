@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": [
+    "Production dashboard renders actual computed data",
+    "Demand and optimizer screens render",
+    "Operating mode invokes solver",
+    "BASE, PEAK and DISRUPT produce recomputed feasible allocations",
+    "Demand and availability sliders run real optimization and disclose a genuine pharmacy minimum conflict",
+    "Last Worker, certificate, interactive frontier and 567-row download work",
+    "Official DISRUPT Last Worker decision captured from the running UI",
+    "Guided tour invokes real scenario selection",
+    "Mobile viewport has no page-level horizontal overflow"
+  ],
+  "browser_errors": [],
+  "screenshots": [
+    "01-command-center.png",
+    "02-demand.png",
+    "03-staffing.png",
+    "04-scenario-lab.png",
+    "05-decision-export.png",
+    "06-mobile.png",
+    "07-last-worker-official.png"
+  ]
+}

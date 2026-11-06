@@ -1,0 +1,80 @@
+{
+  "simulated_case_only": true,
+  "forecast": {
+    "selected": "same_weekday_4",
+    "wape": {
+      "calendar_3": 0.04344567067714251,
+      "ridge": 0.08157225296359381,
+      "same_weekday_2": 0.058116073492706005,
+      "same_weekday_3": 0.04344567067714251,
+      "same_weekday_4": 0.037502478192564526
+    },
+    "aggregation": "Macro average of nine warehouse/department WAPEs; no pooling of incompatible units.",
+    "holdout_rows_per_method": 126,
+    "origins": [
+      "2026-01-29",
+      "2026-02-05"
+    ],
+    "benchmark_note": "Provided planning-week benchmark has no future actual labels. same_weekday_4 is its reconstructed rolling comparator.",
+    "ridge_support": "27-34 daily training rows per warehouse/department; strongly regularized, no future actual features."
+  },
+  "historical_attainment": {
+    "38": 0.7696476964769647,
+    "92": 0.6991869918699187,
+    "95": 0.8825396825396825
+  },
+  "scenarios": [
+    {
+      "scenario_id": 1,
+      "scenario_code": "BASE",
+      "cost": 326103.13999999996,
+      "draft_cost_hypothetical": 329108.19,
+      "modeled_service": 0.9920492747707511,
+      "draft_modeled_service": 0.9168333162263074,
+      "at_risk_blocks": 1,
+      "employees": 2369,
+      "overtime": 43,
+      "flex": 14,
+      "infeasible_draft_groups": 0
+    },
+    {
+      "scenario_id": 2,
+      "scenario_code": "PEAK",
+      "cost": 348786.975,
+      "draft_cost_hypothetical": 329108.19,
+      "modeled_service": 0.9796380838420101,
+      "draft_modeled_service": 0.7521518767470907,
+      "at_risk_blocks": 6,
+      "employees": 2516,
+      "overtime": 156,
+      "flex": 13,
+      "infeasible_draft_groups": 0
+    },
+    {
+      "scenario_id": 3,
+      "scenario_code": "DISRUPT",
+      "cost": 322980.80999999994,
+      "draft_cost_hypothetical": 332374.22,
+      "modeled_service": 0.9425492747707511,
+      "draft_modeled_service": 0.9168333162263074,
+      "at_risk_blocks": 10,
+      "employees": 2323,
+      "overtime": 79,
+      "flex": 15,
+      "infeasible_draft_groups": 10
+    }
+  ],
+  "submission": {
+    "valid": true,
+    "rows": 567,
+    "errors": [],
+    "recalculated_cost": 997870.9249999999
+  },
+  "data_selected_demo": {
+    "store_id": 2,
+    "day_date": "2026-02-14",
+    "shift_code": "MID",
+    "dept_id": 38
+  },
+  "prior_claim_note": "Preliminary research values were not used as labels or forced outputs. No billion-simulation claim."
+}

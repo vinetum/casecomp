@@ -1,0 +1,163 @@
+{
+  "forecast": {
+    "selected": "same_weekday_4",
+    "wape": {
+      "calendar_3": 0.04344567067714251,
+      "ridge": 0.08157225296359381,
+      "same_weekday_2": 0.058116073492706005,
+      "same_weekday_3": 0.04344567067714251,
+      "same_weekday_4": 0.037502478192564526
+    },
+    "aggregation": "Macro average of nine warehouse/department WAPEs; no pooling of incompatible units.",
+    "holdout_rows_per_method": 126,
+    "origins": [
+      "2026-01-29",
+      "2026-02-05"
+    ],
+    "benchmark_note": "Provided planning-week benchmark has no future actual labels. same_weekday_4 is its reconstructed rolling comparator.",
+    "ridge_support": "27-34 daily training rows per warehouse/department; strongly regularized, no future actual features."
+  },
+  "service": {
+    "38": {
+      "model": "isotonic",
+      "regularization_C": null,
+      "selection_brier": 0.01739726631393298,
+      "test": {
+        "n": 126,
+        "brier": 0.024095893404472685,
+        "auc": 0.9923295454545454,
+        "observed_attainment": 0.873015873015873,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "n": 14,
+            "predicted": 0.014846938775510203,
+            "observed": 0.07142857142857142
+          },
+          {
+            "lower": 0.4,
+            "n": 6,
+            "predicted": 0.5416666666666666,
+            "observed": 0.6666666666666666
+          },
+          {
+            "lower": 0.8,
+            "n": 106,
+            "predicted": 0.9859288442950505,
+            "observed": 0.9905660377358491
+          }
+        ],
+        "ece": 0.0161403600148215
+      },
+      "train_rows": 180,
+      "selection_rows": 63,
+      "final_fit_rows": 369,
+      "historical_attainment": 0.7696476964769647,
+      "baseline_test_brier": 0.1354976375552508,
+      "coefficient": null,
+      "note": "Selection ends Jan 28; held-out Jan 29\u2013Feb 11. Final model refit through Feb 11. No warehouse effects; limited support."
+    },
+    "92": {
+      "model": "logistic",
+      "regularization_C": 1000.0,
+      "selection_brier": 0.03365961969170021,
+      "test": {
+        "n": 126,
+        "brier": 0.01847166294621743,
+        "auc": 0.9973776223776224,
+        "observed_attainment": 0.8253968253968254,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "n": 14,
+            "predicted": 0.04058022343348437,
+            "observed": 0.0
+          },
+          {
+            "lower": 0.2,
+            "n": 6,
+            "predicted": 0.2802121459188825,
+            "observed": 0.0
+          },
+          {
+            "lower": 0.4,
+            "n": 3,
+            "predicted": 0.4968879014908034,
+            "observed": 0.6666666666666666
+          },
+          {
+            "lower": 0.6000000000000001,
+            "n": 6,
+            "predicted": 0.716826935318816,
+            "observed": 0.8333333333333334
+          },
+          {
+            "lower": 0.8,
+            "n": 97,
+            "predicted": 0.984441518660996,
+            "observed": 1.0
+          }
+        ],
+        "ece": 0.03942018553238216
+      },
+      "train_rows": 180,
+      "selection_rows": 63,
+      "final_fit_rows": 369,
+      "historical_attainment": 0.6991869918699187,
+      "baseline_test_brier": 0.18084738340796866,
+      "coefficient": -91.91722754071374,
+      "note": "Selection ends Jan 28; held-out Jan 29\u2013Feb 11. Final model refit through Feb 11. No warehouse effects; limited support."
+    },
+    "95": {
+      "model": "logistic",
+      "regularization_C": 1000.0,
+      "selection_brier": 0.04767118361770509,
+      "test": {
+        "n": 108,
+        "brier": 0.01890879047792425,
+        "auc": 0.9954407294832827,
+        "observed_attainment": 0.8703703703703703,
+        "calibration": [
+          {
+            "lower": 0.0,
+            "n": 9,
+            "predicted": 0.05227891674307641,
+            "observed": 0.0
+          },
+          {
+            "lower": 0.2,
+            "n": 2,
+            "predicted": 0.29974363794420145,
+            "observed": 0.0
+          },
+          {
+            "lower": 0.4,
+            "n": 3,
+            "predicted": 0.4617477861830004,
+            "observed": 0.3333333333333333
+          },
+          {
+            "lower": 0.6000000000000001,
+            "n": 5,
+            "predicted": 0.6754000783537586,
+            "observed": 0.8
+          },
+          {
+            "lower": 0.8,
+            "n": 89,
+            "predicted": 0.9841187880883546,
+            "observed": 1.0
+          }
+        ],
+        "ece": 0.032330262532340164
+      },
+      "train_rows": 153,
+      "selection_rows": 54,
+      "final_fit_rows": 315,
+      "historical_attainment": 0.8825396825396825,
+      "baseline_test_brier": 0.11316872427983539,
+      "coefficient": -70.74372816248642,
+      "note": "Selection ends Jan 28; held-out Jan 29\u2013Feb 11. Final model refit through Feb 11. No warehouse effects; limited support."
+    }
+  }
+}

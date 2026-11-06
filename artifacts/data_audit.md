@@ -1,0 +1,96 @@
+# Source audit
+
+- PASS: v_ShiftHistory: rows / unique keys 1134
+- PASS: v_ShiftHistory: preserved original
+- PASS: v_PlanningWeekGrid: rows / unique keys 567
+- PASS: v_PlanningWeekGrid: preserved original
+- PASS: TEAM_SUBMISSION_TEMPLATE: rows / unique keys 567
+- PASS: TEAM_SUBMISSION_TEMPLATE: preserved original
+- PASS: PlanningWeek_BenchmarkForecast: rows / unique keys 63
+- PASS: PlanningWeek_BenchmarkForecast: preserved original
+- PASS: comp_FactShiftDemand: rows / unique keys 1134
+- PASS: comp_FactShiftDemand: preserved original
+- PASS: comp_FactShiftSchedule: rows / unique keys 1323
+- PASS: comp_FactShiftSchedule: preserved original
+- PASS: comp_FactShiftAvailability: rows / unique keys 1701
+- PASS: comp_FactShiftAvailability: preserved original
+- PASS: comp_FactShiftServiceLevel: rows / unique keys 1134
+- PASS: comp_FactShiftServiceLevel: preserved original
+- PASS: comp_ScenarioDemandAdjustment: rows / unique keys 567
+- PASS: comp_ScenarioDemandAdjustment: preserved original
+- PASS: comp_ShiftDefinition: rows / unique keys 27
+- PASS: comp_ShiftDefinition: preserved original
+- PASS: comp_LaborStandard: rows / unique keys 3
+- PASS: comp_LaborStandard: preserved original
+- PASS: comp_LaborCostAssumption: rows / unique keys 9
+- PASS: comp_LaborCostAssumption: preserved original
+- PASS: comp_Scenario: rows / unique keys 4
+- PASS: comp_Scenario: preserved original
+- PASS: comp_ServiceMetricDefinition: rows / unique keys 3
+- PASS: comp_ServiceMetricDefinition: preserved original
+- PASS: comp_DimShift: rows / unique keys 3
+- PASS: comp_DimShift: preserved original
+- PASS: DATA_DICTIONARY: rows / unique keys 91
+- PASS: DATA_DICTIONARY: preserved original
+- PASS: v_ShiftHistory: complete numeric fields
+- PASS: v_ShiftHistory: integer store_id
+- PASS: v_ShiftHistory: integer dept_id
+- PASS: v_ShiftHistory: integer is_open
+- PASS: v_ShiftHistory: integer min_staff
+- PASS: v_ShiftHistory: integer available_regular_employees
+- PASS: v_ShiftHistory: integer max_overtime_employees
+- PASS: v_ShiftHistory: integer cross_trained_flex_employees
+- PASS: v_ShiftHistory: department labels
+- PASS: v_ShiftHistory: pharmacy qualifications
+- PASS: v_PlanningWeekGrid: complete numeric fields
+- PASS: v_PlanningWeekGrid: integer store_id
+- PASS: v_PlanningWeekGrid: integer dept_id
+- PASS: v_PlanningWeekGrid: integer is_open
+- PASS: v_PlanningWeekGrid: integer min_staff
+- PASS: v_PlanningWeekGrid: integer available_regular_employees
+- PASS: v_PlanningWeekGrid: integer max_overtime_employees
+- PASS: v_PlanningWeekGrid: integer cross_trained_flex_employees
+- PASS: v_PlanningWeekGrid: department labels
+- PASS: v_PlanningWeekGrid: pharmacy qualifications
+- PASS: template matches grid keys and metadata
+- PASS: historical range
+- PASS: planning range
+- PASS: no training / planning overlap
+- PASS: scenario codes
+- PASS: historical daily reconciliation
+- PASS: historical closed demand/staff
+- PASS: historical labels open only
+- PASS: historical service labels
+- PASS: historical worked accounting
+- PASS: historical demand source
+- PASS: historical service source
+- PASS: historical schedule source worked_employees
+- PASS: historical schedule source worked_labor_hours
+- PASS: historical schedule source worked_regular_hours
+- PASS: historical schedule source worked_overtime_hours
+- PASS: historical productive hours
+- PASS: historical regular plus OT hours
+- PASS: planning draft source
+- PASS: planning closed availability
+- PASS: open shift durations
+- PASS: shift definition paid_hours
+- PASS: shift definition is_open
+- PASS: shift definition min_staff
+- PASS: exact official multipliers
+- PASS: BASE / DISRUPT workload multiplier
+- PASS: availability source available_regular_employees
+- PASS: availability source max_overtime_employees
+- PASS: availability source cross_trained_flex_employees
+- PASS: regular loaded rates
+- PASS: overtime loaded rates
+- PASS: grid source loaded_regular_hourly_cost
+- PASS: grid source loaded_overtime_hourly_cost
+- PASS: workbook matches ShiftHistory
+- PASS: workbook matches PlanningWeekGrid
+- PASS: workbook matches BenchmarkForecast
+- PASS: workbook matches ShiftDefinition
+- PASS: workbook matches LaborStandard
+- PASS: workbook matches ServiceMetric
+- PASS: workbook matches LaborCost
+- PASS: workbook matches Scenario
+- PASS: workbook matches DataDictionary
