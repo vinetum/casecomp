@@ -10,7 +10,7 @@ All model inputs stay inside the container. Only `frontend/dist` is served as st
 
 ## Before opening Render
 
-1. Sign in to GitHub and open **vinetum/casecomp**. Above the file list, click the branch selector (usually **main**) and choose **work**. Confirm `Dockerfile`, `render.yaml` and this guide appear. The deployment readiness report records whether this task could push the branch. If work is not visible, the changes are still local: use GitHub Desktop to select this repository and branch work, then click **Publish branch** or **Push origin**. Do not deploy main if it only contains the original input files.
+1. Sign in to GitHub and open **vinetum/casecomp**. Above the file list, click the branch selector (usually **main**) and choose **work**. Confirm `Dockerfile`, `render.yaml` and this guide appear. The tested work branch has been pushed to the existing GitHub repository. If work is not visible, the changes are still local: use GitHub Desktop to select this repository and branch work, then click **Publish branch** or **Push origin**. Do not deploy main if it only contains the original input files.
 2. Do not upload a `.env`, credentials, or signing key to GitHub. The repository already ignores local secret files.
 3. Open a password manager and generate a **unique random password of 24 or more characters** (maximum 256) for the demo. You will paste it into Render, not into code or chat. Share it privately only with your team and authorized judges.
 

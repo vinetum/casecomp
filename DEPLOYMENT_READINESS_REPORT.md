@@ -2,7 +2,7 @@
 
 **Decision: READY FOR ACCOUNT-AUTHORIZED DEPLOYMENT; NOT PUBLICLY DEPLOYED.**
 
-Prepared from `fbbe9ce` on branch `work`. The audited conditional model limitations remain in force. No Render service, public URL, public TLS certificate, GitHub-to-Render installation or paid account resource was created. There is no Render connector/CLI credential in this environment; configured Render token names and platform identity/secret bindings were checked for presence without exposing values. The remaining outside action is the user's Render account authorization, GitHub repository connection and paid-plan confirmation.
+Prepared from `fbbe9ce` on branch `work`. The deployment package was committed as `1485f34` and successfully pushed to `origin/work` in `vinetum/casecomp`; no main-branch merge is needed for the Blueprint. The audited conditional model limitations remain in force. No Render service, public URL, public TLS certificate, GitHub-to-Render installation or paid account resource was created. There is no Render connector/CLI credential in this environment; configured Render token names and platform identity/secret bindings were checked for presence without exposing values. The remaining outside action is the user's Render account authorization, GitHub repository connection and paid-plan confirmation.
 
 ## 1. Delivered configuration
 
@@ -51,7 +51,7 @@ The optimizer's objective, candidate constraints and recommendations are unchang
 
 ## 5. Manual actions required
 
-1. Confirm branch work is available in GitHub; the final task response records remote publication status. Render cannot deploy a branch that exists only in the coding workspace.
+1. Select the published **work** branch in GitHub/Render. Publication to the existing GitHub repository succeeded; the deployed website still requires the separate Render action below.
 2. Sign in to Render, connect/authorize only `vinetum/casecomp` in GitHub, select branch work and the root Blueprint, supply the shared demo password securely, and approve the selected paid service only after reviewing its price.
 3. Let Render deploy; open the **actual HTTPS URL it displays**. Run the exact hosted login/scenario/CSV/logout checks in `DEPLOYMENT_GUIDE.md`. No public URL or public-certificate success is asserted before those steps.
 4. Perform the Mac's initial installation while online and a cold Wi-Fi-off rehearsal. Use `LOCAL_BACKUP_GUIDE.md` and `COMPETITION_DAY_CHECKLIST.md`.

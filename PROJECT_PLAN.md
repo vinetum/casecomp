@@ -27,5 +27,6 @@
 - [x] Actual clean-image production HTTPS/browser/model/export acceptance.
 - [x] Mac installers/launchers, both architecture wheel checks and portable lifecycle test.
 - [x] Beginner deployment/backup/checklist documentation and readiness report.
+- [x] Publish tested work branch to the existing GitHub repository.
 - [ ] User Render authorization, GitHub connection, paid-service approval and public-site verification.
 - [ ] First installation and Wi-Fi-off rehearsal on the user's physical MacBook.
